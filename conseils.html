@@ -140,74 +140,148 @@ footer { background:#1A1A2E; color:rgba(255,255,255,0.75); padding:48px 5% 28px;
   <p class="section-sub" style="margin-bottom:48px;">Retrouvez nos articles pratiques sur le chauffage, les réglementations en vigueur et les aides disponibles en Wallonie.</p>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px;">
 
-    <article style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);">
+    <article id="article-0" style="background:var(--white);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
       <div style="background:linear-gradient(135deg,#1D6FA4,#2187C3);padding:28px 24px 20px;">
         <span style="font-size:2.2rem;">📋</span>
         <span style="background:rgba(255,255,255,0.2);color:#fff;padding:4px 12px;border-radius:50px;font-size:0.75rem;font-weight:700;margin-left:10px;">Réglementation</span>
       </div>
-      <div style="padding:28px;">
-        <h3 style="font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:14px;">Entretien chaudière obligatoire en Wallonie</h3>
-        <div style="background:var(--light);border-radius:10px;padding:14px 18px;margin-bottom:12px;">
-          <p style="font-size:0.88rem;line-height:1.8;margin:0;"><strong style="color:var(--blue);">🔵 Chaudière à gaz</strong><br>Contrôle obligatoire : <strong>tous les 3 ans</strong><br>Entretien conseillé : <strong>tous les 2 ans</strong></p>
+      <div style="padding:24px;">
+        <h3 style="font-family:'Poppins',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:10px;line-height:1.4;">Entretien chaudière obligatoire en Wallonie : ce que dit la loi</h3>
+        <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:16px;">En Wallonie, les obligations légales varient selon le type de chaudière. L'attestation délivrée après contrôle est indispensable pour votre assurance habitation et en cas de vente de votre bien.</p>
+        <div style="background:#F9FAFB;border-radius:10px;padding:14px 18px;margin-bottom:14px;">
+          <p style="font-size:0.88rem;line-height:1.8;margin:0;color:#374151;">
+            <strong style="color:#1D6FA4;">🔵 Chaudière à gaz</strong><br>
+            Contrôle périodique obligatoire : <strong>tous les 3 ans</strong><br>
+            Entretien conseillé : <strong>tous les 2 ans</strong> pour optimiser la consommation et éviter les pannes
+          </p>
         </div>
-        <div style="background:var(--light);border-radius:10px;padding:14px 18px;margin-bottom:16px;">
-          <p style="font-size:0.88rem;line-height:1.8;margin:0;"><strong style="color:var(--orange-dark);">🟠 Chaudière au mazout</strong><br>Contrôle obligatoire : <strong>tous les ans</strong><br>Entretien conseillé : <strong>annuel</strong></p>
+        <div style="background:#F9FAFB;border-radius:10px;padding:14px 18px;margin-bottom:14px;">
+          <p style="font-size:0.88rem;line-height:1.8;margin:0;color:#374151;">
+            <strong style="color:#D97E06;">🟠 Chaudière au mazout</strong><br>
+            Contrôle périodique obligatoire : <strong>tous les ans</strong><br>
+            Entretien conseillé : <strong>annuel également</strong>, combiné au contrôle réglementaire
+          </p>
         </div>
-        <a href="contact.html" style="color:var(--orange);font-weight:700;font-size:0.88rem;text-decoration:none;">Planifier mon entretien →</a>
+        <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:0;">En cas de non-respect, vous risquez une amende et la mise hors service de votre installation. Un entretien régulier prolonge aussi significativement la durée de vie de votre chaudière.</p>
+        <a href="#contact" style="color:var(--orange);font-weight:700;font-size:0.88rem;text-decoration:none;">Planifier mon entretien →</a>
       </div>
     </article>
 
-    <article style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);">
+<article id="article-1" style="background:var(--white);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
       <div style="background:linear-gradient(135deg,#D97E06,#F5920A);padding:28px 24px 20px;">
         <span style="font-size:2.2rem;">💶</span>
         <span style="background:rgba(255,255,255,0.2);color:#fff;padding:4px 12px;border-radius:50px;font-size:0.75rem;font-weight:700;margin-left:10px;">Primes 2025</span>
       </div>
-      <div style="padding:28px;">
-        <h3 style="font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:14px;">Primes énergie 2025 en Wallonie</h3>
-        <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:16px;">La Wallonie propose des aides pour le remplacement de chaudière, l'installation d'une pompe à chaleur, la VMC et l'isolation. Accessibles via les Guichets Énergie Wallonie.</p>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;">
-          <a href="https://energie.wallonie.be/home/contacts/guichets-energie-wallonie.html" target="_blank" style="background:var(--blue);color:#fff;padding:8px 16px;border-radius:50px;font-weight:700;font-size:0.82rem;text-decoration:none;">🔗 energie.wallonie.be</a>
-          <a href="contact.html" style="color:var(--orange);font-weight:700;font-size:0.88rem;text-decoration:none;display:flex;align-items:center;">Devis avec prime →</a>
+      <div style="padding:24px;">
+        <h3 style="font-family:'Poppins',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:10px;line-height:1.4;">Primes énergie 2025 en Wallonie : ce que vous pouvez obtenir</h3>
+        <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:16px;">La Wallonie propose plusieurs <strong>primes énergie</strong> pour vous aider à financer vos travaux. En 2025, vous pouvez bénéficier d'aides pour le remplacement d'une vieille chaudière, l'installation d'une pompe à chaleur, l'isolation ou encore la ventilation VMC.</p>
+        <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:16px;">Ces primes sont accessibles via les <strong>Guichets Énergie Wallonie</strong> et peuvent couvrir une partie importante du coût des travaux selon vos revenus. Anaël peut vous guider dans les démarches lors de votre devis.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:4px;">
+          <a href="https://energie.wallonie.be/home/contacts/guichets-energie-wallonie.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--blue);color:#fff;padding:8px 16px;border-radius:50px;font-weight:700;font-size:0.82rem;text-decoration:none;">🔗 Voir les primes sur energie.wallonie.be</a>
+          <a href="#contact" style="display:inline-flex;align-items:center;gap:6px;color:var(--orange);font-weight:700;font-size:0.88rem;text-decoration:none;">Demander un devis avec prime →</a>
         </div>
       </div>
     </article>
 
-    <article style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);">
+<article id="article-2" style="background:var(--white);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
       <div style="background:linear-gradient(135deg,#166534,#22C55E);padding:28px 24px 20px;">
         <span style="font-size:2.2rem;">♻️</span>
         <span style="background:rgba(255,255,255,0.2);color:#fff;padding:4px 12px;border-radius:50px;font-size:0.75rem;font-weight:700;margin-left:10px;">Écologie</span>
       </div>
-      <div style="padding:28px;">
-        <h3 style="font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:14px;">Pompe à chaleur à Ciney : est-ce rentable ?</h3>
-        <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:16px;">La pompe à chaleur consomme 3 à 4 fois moins d'énergie qu'une chaudière traditionnelle. Combinée aux primes wallonnes, elle devient rapidement rentable.</p>
-        <a href="contact.html" style="color:var(--orange);font-weight:700;font-size:0.88rem;text-decoration:none;">Étude gratuite →</a>
+      <div style="padding:24px;">
+        <h3 style="font-family:'Poppins',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:10px;line-height:1.4;">Pompe à chaleur à Ciney : est-ce rentable pour votre maison ?</h3>
+        <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:16px;">La pompe à chaleur est une alternative écologique et économique à la chaudière traditionnelle. Elle puise les calories dans l'air ou le sol pour chauffer votre maison, avec une <strong>consommation électrique 3 à 4 fois inférieure</strong> à l'énergie produite.</p>
+        <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:16px;">Combinée aux primes wallonnes, elle devient rapidement rentable. LKS Chauffage vous propose une étude personnalisée selon votre habitation et votre budget.</p>
+        <a href="#contact" style="color:var(--orange);font-weight:700;font-size:0.88rem;text-decoration:none;">Étude gratuite pour mon logement →</a>
       </div>
     </article>
 
-    <article style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);">
+<article id="article-3" style="background:var(--white);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
       <div style="background:linear-gradient(135deg,#7C3AED,#A855F7);padding:28px 24px 20px;">
         <span style="font-size:2.2rem;">🛢️</span>
-        <span style="background:rgba(255,255,255,0.2);color:#fff;padding:4px 12px;border-radius:50px;font-size:0.75rem;font-weight:700;margin-left:10px;">2026–2035</span>
+        <span style="background:rgba(255,255,255,0.2);color:#fff;padding:4px 12px;border-radius:50px;font-size:0.75rem;font-weight:700;margin-left:10px;">Réglementation 2026–2035</span>
       </div>
-      <div style="padding:28px;">
-        <h3 style="font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:14px;">Fin du mazout en Wallonie</h3>
-        <div style="border-left:3px solid #7C3AED;padding-left:12px;margin-bottom:10px;"><p style="font-size:0.82rem;font-weight:700;color:#7C3AED;margin-bottom:2px;">01/01/2026</p><p style="font-size:0.81rem;color:#374151;margin:0;">Interdit dans les bâtiments neufs</p></div>
-        <div style="border-left:3px solid #D97E06;padding-left:12px;margin-bottom:10px;"><p style="font-size:0.82rem;font-weight:700;color:#D97E06;margin-bottom:2px;">01/01/2027</p><p style="font-size:0.81rem;color:#374151;margin:0;">Interdit si bâtiment neuf ou zone gaz</p></div>
-        <div style="border-left:3px solid #DC2626;padding-left:12px;margin-bottom:10px;"><p style="font-size:0.82rem;font-weight:700;color:#DC2626;margin-bottom:2px;">01/01/2031</p><p style="font-size:0.81rem;color:#374151;margin:0;">Interdit dans tous les bâtiments</p></div>
-        <div style="border-left:3px solid #111;padding-left:12px;margin-bottom:16px;"><p style="font-size:0.82rem;font-weight:700;color:#111;margin-bottom:2px;">01/01/2035</p><p style="font-size:0.81rem;color:#374151;margin:0;">Fin totale, même les brûleurs</p></div>
-        <a href="contact.html" style="color:#7C3AED;font-weight:700;font-size:0.88rem;text-decoration:none;">Me faire conseiller →</a>
+      <div style="padding:24px;">
+        <h3 style="font-family:'Poppins',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:10px;line-height:1.4;">Fin du mazout en Wallonie — faisons le point</h3>
+        <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:14px;">Les médias ont déjà relayé l'info, mais il n'est jamais mauvais de rappeler ce grand changement en Wallonie. Le calendrier de sortie du combustible liquide est désormais fixé :</p>
+
+        <div style="border-left:3px solid #7C3AED;padding-left:14px;margin-bottom:12px;">
+          <p style="font-size:0.85rem;font-weight:700;color:#7C3AED;margin-bottom:4px;">📅 Depuis le 01/01/2026</p>
+          <p style="font-size:0.83rem;color:#374151;line-height:1.6;margin:0;">Interdiction d'installer une chaudière au mazout ou au charbon dans tous les <strong>bâtiments neufs</strong>. Cette décision était déjà effective depuis juin 2025.</p>
+        </div>
+
+        <div style="border-left:3px solid #D97E06;padding-left:14px;margin-bottom:12px;">
+          <p style="font-size:0.85rem;font-weight:700;color:#D97E06;margin-bottom:4px;">📅 Dès le 01/01/2027</p>
+          <p style="font-size:0.83rem;color:#374151;line-height:1.6;margin:0;">Interdiction d'installer, moderniser ou remplacer une chaudière mazout/charbon si le bâtiment est <strong>assimilé à du neuf</strong> (rénovation globale ≥ 75% de l'enveloppe) ou s'il est situé <strong>dans une zone desservie par le gaz naturel</strong>.<br>L'installateur devra informer l'Administration dans les 3 mois suivant les travaux.</p>
+        </div>
+
+        <div style="border-left:3px solid #DC2626;padding-left:14px;margin-bottom:12px;">
+          <p style="font-size:0.85rem;font-weight:700;color:#DC2626;margin-bottom:4px;">📅 Dès le 01/01/2031</p>
+          <p style="font-size:0.83rem;color:#374151;line-height:1.6;margin:0;">Interdiction d'installer ou moderniser une chaudière mazout/charbon dans <strong>tous les bâtiments</strong>. Seul le remplacement du brûleur restera autorisé.</p>
+        </div>
+
+        <div style="border-left:3px solid #111827;padding-left:14px;margin-bottom:16px;">
+          <p style="font-size:0.85rem;font-weight:700;color:#111827;margin-bottom:4px;">📅 Dès le 01/01/2035</p>
+          <p style="font-size:0.83rem;color:#374151;line-height:1.6;margin:0;">C'est la <strong>fin totale du mazout en Wallonie</strong> : aucune installation, modernisation ni remplacement de brûleur ne sera autorisé.</p>
+        </div>
+
+        <p style="color:var(--gray);font-size:0.83rem;line-height:1.6;margin-bottom:16px;">Vous êtes concerné et souhaitez anticiper ? Anaël peut vous conseiller sur les alternatives : pompe à chaleur, chaudière à condensation gaz, ou autres solutions adaptées à votre logement.</p>
+        <a href="#contact" style="color:#7C3AED;font-weight:700;font-size:0.88rem;text-decoration:none;">Me faire conseiller sur les alternatives →</a>
       </div>
     </article>
 
-    <article style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);">
+<article id="article-4" style="background:var(--white);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
       <div style="background:linear-gradient(135deg,#0F766E,#14B8A6);padding:28px 24px 20px;">
         <span style="font-size:2.2rem;">📚</span>
         <span style="background:rgba(255,255,255,0.2);color:#fff;padding:4px 12px;border-radius:50px;font-size:0.75rem;font-weight:700;margin-left:10px;">Ressource technique</span>
       </div>
-      <div style="padding:28px;">
-        <h3 style="font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:14px;">Passionné de technique ? Découvrez EnergiePlus !</h3>
-        <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:16px;">Développé par l'UCLouvain, EnergiePlus est une référence belge sur le chauffage, la ventilation et les énergies renouvelables. Une mine d'or pour les curieux et les professionnels.</p>
-        <a href="https://energieplus-lesite.be/#" target="_blank" style="background:#0F766E;color:#fff;padding:9px 18px;border-radius:50px;font-weight:700;font-size:0.85rem;text-decoration:none;">🔗 Visiter EnergiePlus</a>
+      <div style="padding:24px;">
+        <h3 style="font-family:'Poppins',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:10px;line-height:1.4;">Vous êtes passionné de technique ? Plongez dans EnergiePlus !</h3>
+        <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:14px;">Vous aimez comprendre comment fonctionne votre installation de chauffage, les lois physiques derrière la thermodynamique, ou les détails techniques des systèmes énergétiques ? <strong>EnergiePlus</strong> est fait pour vous.</p>
+        <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:14px;">Développé par l'Architecture et Climat de l'UCLouvain, ce site de référence belge propose des explications approfondies et rigoureuses sur tous les aspects du chauffage, de la ventilation, de l'isolation et des énergies renouvelables. Une vraie mine d'or pour les curieux et les professionnels.</p>
+        <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:20px;">C'est d'ailleurs l'une des sources que nous consultons régulièrement pour rester à jour sur les meilleures pratiques du secteur.</p>
+        <a href="https://energieplus-lesite.be/#" target="_blank" rel="noopener"
+           style="display:inline-flex;align-items:center;gap:8px;background:#0F766E;color:#fff;padding:10px 20px;border-radius:50px;font-weight:700;font-size:0.88rem;text-decoration:none;transition:opacity 0.2s;"
+           onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+          🔗 Visiter EnergiePlus-LeSite.be
+        </a>
+      </div>
+    </article>
+
+    <article id="article-5" style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+      <div style="background:linear-gradient(135deg,#991B1B,#DC2626);padding:28px 24px 20px;">
+        <span style="font-size:2.2rem;">🧾</span>
+        <span style="background:rgba(255,255,255,0.2);color:#fff;padding:4px 12px;border-radius:50px;font-size:0.75rem;font-weight:700;margin-left:10px;">TVA — Juillet 2025</span>
+      </div>
+      <div style="padding:24px;">
+        <h3 style="font-family:'Poppins',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:14px;line-height:1.4;">TVA à 21 % sur les chaudières fossiles : ce qui change pour vous</h3>
+        <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:12px;">Depuis le <strong>29 juillet 2025</strong>, la livraison et l'installation d'une chaudière alimentée par des <strong>combustibles fossiles</strong> (gaz naturel, mazout, charbon) ne bénéficie plus du taux réduit de TVA de 6 %. Le taux normal de <strong>21 %</strong> s'applique désormais.</p>
+
+        <div style="background:var(--light);border-radius:10px;padding:14px 16px;margin-bottom:12px;border-left:3px solid #DC2626;">
+          <p style="font-size:0.85rem;font-weight:700;color:#991B1B;margin-bottom:6px;">❌ Désormais taxés à 21 %</p>
+          <ul style="margin-left:16px;font-size:0.83rem;color:#374151;line-height:1.8;margin-bottom:0;">
+            <li>La chaudière gaz ou mazout (neuve ou de remplacement)</li>
+            <li>Le brûleur, les appareils de régulation reliés à la chaudière</li>
+            <li>La pompe de circulation, le réservoir, les tuyaux d'alimentation</li>
+            <li>Le démontage de l'ancienne installation (accessoire du principal)</li>
+          </ul>
+        </div>
+
+        <div style="background:var(--light);border-radius:10px;padding:14px 16px;margin-bottom:12px;border-left:3px solid #166534;">
+          <p style="font-size:0.85rem;font-weight:700;color:#166534;margin-bottom:6px;">✅ Taux réduit de 6 % maintenu pour</p>
+          <ul style="margin-left:16px;font-size:0.83rem;color:#374151;line-height:1.8;margin-bottom:0;">
+            <li>L'entretien et la réparation des chaudières (gaz, mazout…)</li>
+            <li>Les radiateurs, vannes thermostatiques, vases d'expansion</li>
+            <li>Les thermostats et systèmes de régulation de température installés seuls</li>
+            <li>Les pompes à chaleur, chaudières à pellets, systèmes non fossiles</li>
+          </ul>
+        </div>
+
+        <div style="background:#FEF3C7;border-radius:10px;padding:12px 16px;margin-bottom:16px;border-left:3px solid #D97706;">
+          <p style="font-size:0.83rem;color:#92400E;line-height:1.6;margin:0;"><strong>Mesure transitoire :</strong> les contrats signés <strong>avant le 28/07/2025</strong> peuvent encore bénéficier du taux de 6 %, à condition que la TVA devienne exigible avant le <strong>30/06/2026</strong> et que la date de signature soit prouvable (devis signé, contrat, facture).</p>
+        </div>
+
+        <a href="https://fin.belgium.be/fr/particuliers/habitation/construire-renover/renover/modification-taux-tva-installations-combustibles" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#DC2626;color:#fff;padding:8px 16px;border-radius:50px;font-weight:700;font-size:0.82rem;text-decoration:none;">🔗 Circulaire officielle — SPF Finances</a>
       </div>
     </article>
 
