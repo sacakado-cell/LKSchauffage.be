@@ -94,6 +94,163 @@ footer { background:#1A1A2E; color:rgba(255,255,255,0.75); padding:48px 5% 28px;
   .mobile-menu { display:none !important; }
 }
 
+
+
+
+
+/* ══ CONSEILS CARDS & PANEL ════════════════════════════════════ */
+.c-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+/* Compact card */
+.c-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.22s, box-shadow 0.22s;
+  outline: none;
+}
+.c-card:hover,
+.c-card:focus-visible { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+.c-card[aria-expanded="true"] {
+  outline: 2px solid rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+}
+
+.c-card__stripe {
+  height: 6px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px 16px 8px;
+  gap: 10px;
+}
+.c-card__emoji { font-size: 1.5rem; }
+.c-card__content { padding: 12px 18px 18px; display: flex; flex-direction: column; flex: 1; }
+.c-card__badge {
+  display: inline-block;
+  background: var(--orange-light);
+  color: var(--orange-dark);
+  padding: 2px 10px;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  align-self: flex-start;
+}
+.c-card__title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--dark);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+.c-card__preview {
+  color: var(--gray);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 14px;
+}
+.c-card__cta {
+  color: var(--orange);
+  font-weight: 700;
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: auto;
+}
+.c-card__arrow { transition: transform 0.2s; }
+.c-card:hover .c-card__arrow { transform: translateX(4px); }
+
+/* Expanded panel — full width below the grid */
+.c-panel {
+  grid-column: 1 / -1;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.13);
+  overflow: hidden;
+  animation: panelIn 0.35s cubic-bezier(0.4,0,0.2,1);
+  margin-top: 4px;
+}
+@keyframes panelIn {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.c-panel__inner { display: flex; flex-direction: column; }
+.c-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 28px;
+  gap: 16px;
+}
+.c-panel__header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 0;
+}
+.c-panel__badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.25);
+  color: #fff;
+  padding: 2px 10px;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+.c-panel__title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #fff;
+  line-height: 1.35;
+  margin: 0;
+}
+.c-panel__close {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.25);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+.c-panel__close:hover { background: rgba(255,255,255,0.4); }
+.c-panel__body {
+  padding: 28px 32px 32px;
+  max-width: 860px;
+}
+
+@media(max-width:680px) {
+  .c-grid { grid-template-columns: 1fr; }
+  .c-panel__body { padding: 20px 18px 24px; }
+  .c-panel__title { font-size: 0.9rem; }
+}
+/* ══════════════════════════════════════════════════════════════ */
+
 </style>
 </head>
 <body>
@@ -140,42 +297,178 @@ footer { background:#1A1A2E; color:rgba(255,255,255,0.75); padding:48px 5% 28px;
   <p class="section-sub" style="margin-bottom:48px;">Retrouvez nos articles pratiques sur le chauffage, les réglementations en vigueur et les aides disponibles en Wallonie.</p>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px;">
 
-    <article id="article-0" style="background:var(--white);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
-      <div style="background:linear-gradient(135deg,#1D6FA4,#2187C3);padding:28px 24px 20px;">
-        <span style="font-size:2.2rem;">📋</span>
-        <span style="background:rgba(255,255,255,0.2);color:#fff;padding:4px 12px;border-radius:50px;font-size:0.75rem;font-weight:700;margin-left:10px;">Réglementation</span>
+    <div class="c-grid">
+    <div class="c-card" data-idx="0" role="button" tabindex="0" aria-expanded="false">
+      <div class="c-card__stripe" style="background:linear-gradient(135deg,#1D6FA4,#2187C3);">
+        <span class="c-card__emoji">📋</span>
       </div>
-      <div style="padding:24px;">
-        <h3 style="font-family:'Poppins',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:10px;line-height:1.4;">Entretien chaudière obligatoire en Wallonie : ce que dit la loi</h3>
-        <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:16px;">En Wallonie, les obligations légales varient selon le type de chaudière. L'attestation délivrée après contrôle est indispensable pour votre assurance habitation et en cas de vente de votre bien.</p>
-        <div style="background:#F9FAFB;border-radius:10px;padding:14px 18px;margin-bottom:14px;">
-          <p style="font-size:0.88rem;line-height:1.8;margin:0;color:#374151;">
-            <strong style="color:#1D6FA4;">🔵 Chaudière à gaz</strong><br>
-            Contrôle périodique obligatoire : <strong>tous les 3 ans</strong><br>
-            Entretien conseillé : <strong>tous les 2 ans</strong> pour optimiser la consommation et éviter les pannes
-          </p>
-        </div>
-        <div style="background:#F9FAFB;border-radius:10px;padding:14px 18px;margin-bottom:14px;">
-          <p style="font-size:0.88rem;line-height:1.8;margin:0;color:#374151;">
-            <strong style="color:#D97E06;">🟠 Chaudière au mazout</strong><br>
-            Contrôle périodique obligatoire : <strong>tous les ans</strong><br>
-            Entretien conseillé : <strong>annuel également</strong>, combiné au contrôle réglementaire
-          </p>
-        </div>
-        <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:0;">En cas de non-respect, vous risquez une amende et la mise hors service de votre installation. Un entretien régulier prolonge aussi significativement la durée de vie de votre chaudière.</p>
-        <a href="contact.html" style="color:var(--orange);font-weight:700;font-size:0.88rem;text-decoration:none;">Planifier mon entretien →</a>
+      <div class="c-card__content">
+        <span class="c-card__badge">Réglementation</span>
+        <h3 class="c-card__title">Entretien chaudière obligatoire en Wallonie : ce que dit la loi</h3>
+        <p class="c-card__preview">En Wallonie, l'entretien de votre chaudière n'est pas qu'une bonne pratique — c'est une obligation légale. Le non-respect peut entraîner des problèmes avec…</p>
+        <span class="c-card__cta">Lire la suite <span class="c-card__arrow">→</span></span>
       </div>
-    </article>
+    </div>
+    <div class="c-card" data-idx="1" role="button" tabindex="0" aria-expanded="false">
+      <div class="c-card__stripe" style="background:linear-gradient(135deg,#D97E06,#F5920A);">
+        <span class="c-card__emoji">💶</span>
+      </div>
+      <div class="c-card__content">
+        <span class="c-card__badge">Primes 2026</span>
+        <h3 class="c-card__title">Primes énergie 2026 en Wallonie : profitez-en avant fin septembre !</h3>
+        <p class="c-card__preview">⚠️ Régime transitoire en vigueur jusqu'au 30 septembre 2026. Après cette date, les montants et conditions seront revus. Si vous envisagez des travaux, c'est le…</p>
+        <span class="c-card__cta">Lire la suite <span class="c-card__arrow">→</span></span>
+      </div>
+    </div>
+    <div class="c-card" data-idx="2" role="button" tabindex="0" aria-expanded="false">
+      <div class="c-card__stripe" style="background:linear-gradient(135deg,#166534,#22C55E);">
+        <span class="c-card__emoji">♻️</span>
+      </div>
+      <div class="c-card__content">
+        <span class="c-card__badge">Écologie</span>
+        <h3 class="c-card__title">Pompe à chaleur à Ciney : est-ce fait pour votre maison ?</h3>
+        <p class="c-card__preview">La pompe à chaleur (PAC) séduit de plus en plus en Wallonie — mais elle n'est pas la solution miracle pour tous les logements. Voici un tour d'horizon honnête…</p>
+        <span class="c-card__cta">Lire la suite <span class="c-card__arrow">→</span></span>
+      </div>
+    </div>
+    <div class="c-card" data-idx="3" role="button" tabindex="0" aria-expanded="false">
+      <div class="c-card__stripe" style="background:linear-gradient(135deg,#7C3AED,#A855F7);">
+        <span class="c-card__emoji">🛢️</span>
+      </div>
+      <div class="c-card__content">
+        <span class="c-card__badge">Réglementation 2026–2035</span>
+        <h3 class="c-card__title">Fin du mazout en Wallonie — faisons le point</h3>
+        <p class="c-card__preview">La Wallonie s'est engagée dans une transition progressive vers la fin du chauffage au mazout. Voici le calendrier et les dernières évolutions réglementaires.</p>
+        <span class="c-card__cta">Lire la suite <span class="c-card__arrow">→</span></span>
+      </div>
+    </div>
+    <div class="c-card" data-idx="4" role="button" tabindex="0" aria-expanded="false">
+      <div class="c-card__stripe" style="background:linear-gradient(135deg,#0F766E,#14B8A6);">
+        <span class="c-card__emoji">📚</span>
+      </div>
+      <div class="c-card__content">
+        <span class="c-card__badge">Ressource technique</span>
+        <h3 class="c-card__title">Vous êtes passionné de technique ? Plongez dans EnergiePlus !</h3>
+        <p class="c-card__preview">EnergiePlus est le site de référence belge sur le chauffage, la ventilation et les énergies renouvelables, développé par l'UCLouvain. Une mine d'or pour…</p>
+        <span class="c-card__cta">Lire la suite <span class="c-card__arrow">→</span></span>
+      </div>
+    </div>
+    <div class="c-card" data-idx="5" role="button" tabindex="0" aria-expanded="false">
+      <div class="c-card__stripe" style="background:linear-gradient(135deg,#991B1B,#DC2626);">
+        <span class="c-card__emoji">🧾</span>
+      </div>
+      <div class="c-card__content">
+        <span class="c-card__badge">TVA — Juillet 2025</span>
+        <h3 class="c-card__title">TVA à 21 % sur les chaudières fossiles : ce qui change pour vous</h3>
+        <p class="c-card__preview">Depuis le 29 juillet 2025 (publication de la loi-programme au Moniteur Belge), la livraison et l'installation d'une chaudière alimentée par des combustibles…</p>
+        <span class="c-card__cta">Lire la suite <span class="c-card__arrow">→</span></span>
+      </div>
+    </div>
+    <div class="c-card" data-idx="6" role="button" tabindex="0" aria-expanded="false">
+      <div class="c-card__stripe" style="background:linear-gradient(135deg,#0369A1,#0EA5E9);">
+        <span class="c-card__emoji">💧</span>
+      </div>
+      <div class="c-card__content">
+        <span class="c-card__badge">Sanitaire</span>
+        <h3 class="c-card__title">Adoucisseur d'eau : utile chez vous en Wallonie ?</h3>
+        <p class="c-card__preview">En Belgique, l'eau du robinet n'est pas la même partout. Sa dureté — mesurée en degrés français (°fH) — détermine si un adoucisseur d'eau est un investissement…</p>
+        <span class="c-card__cta">Lire la suite <span class="c-card__arrow">→</span></span>
+      </div>
+    </div>
+    <div class="c-card" data-idx="7" role="button" tabindex="0" aria-expanded="false">
+      <div class="c-card__stripe" style="background:linear-gradient(135deg,#0F766E,#14B8A6);">
+        <span class="c-card__emoji">🚿</span>
+      </div>
+      <div class="c-card__content">
+        <span class="c-card__badge">Économies</span>
+        <h3 class="c-card__title">Boiler thermodynamique : rentable en combien de temps ?</h3>
+        <p class="c-card__preview">Le boiler thermodynamique capte les calories de l'air ambiant pour chauffer l'eau — comme un réfrigérateur à l'envers. Résultat : 60 à 70 % d'énergie en moins…</p>
+        <span class="c-card__cta">Lire la suite <span class="c-card__arrow">→</span></span>
+      </div>
+    </div>
 
-    <article id="article-1" style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
-      <div style="background:linear-gradient(135deg,#D97E06,#F5920A);padding:28px 24px 20px;">
-        <span style="font-size:2.2rem;">💶</span>
-        <span style="background:rgba(255,255,255,0.2);color:#fff;padding:4px 12px;border-radius:50px;font-size:0.75rem;font-weight:700;margin-left:10px;">Primes 2026</span>
-      </div>
-      <div style="padding:28px;">
-        <h3 style="font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:14px;line-height:1.4;">Primes énergie 2026 en Wallonie : profitez-en avant fin septembre !</h3>
+    <div class="c-panel" id="c-panel-0" hidden>
+      <div class="c-panel__inner">
+        <div class="c-panel__header" style="background:linear-gradient(135deg,#1D6FA4,#2187C3);">
+          <div class="c-panel__header-left">
+            <span style="font-size:2rem;">📋</span>
+            <div>
+              <span class="c-panel__badge">Réglementation</span>
+              <h2 class="c-panel__title">Entretien chaudière obligatoire en Wallonie : ce que dit la loi</h2>
+            </div>
+          </div>
+          <button class="c-panel__close" aria-label="Fermer">✕</button>
+        </div>
+        <div class="c-panel__body">
+          <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:16px;">En Wallonie, les obligations légales varient selon le type de chaudière. L'attestation délivrée après contrôle est <strong>indispensable pour votre assurance habitation</strong> et en cas de vente de votre bien.</p>
 
-        <div style="background:#FEF3C7;border-radius:10px;padding:14px 16px;margin-bottom:20px;border-left:3px solid #D97E06;">
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:18px;">
+
+          <div style="background:var(--light);border-radius:12px;padding:16px 18px;border-left:4px solid #1D6FA4;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+              <span style="font-size:1.4rem;">🔵</span>
+              <strong style="font-family:'Poppins',sans-serif;font-size:0.92rem;">Chaudière à gaz</strong>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px;font-size:0.83rem;color:#374151;">
+              <div style="display:flex;align-items:flex-start;gap:8px;">
+                <span style="color:#DC2626;font-weight:700;flex-shrink:0;">⚠️ Contrôle périodique obligatoire :</span>
+                <span>tous les <strong>3 ans</strong></span>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:8px;">
+                <span style="color:#166534;font-weight:700;flex-shrink:0;">💡 Entretien conseillé :</span>
+                <span>tous les <strong>2 ans</strong> pour optimiser la consommation et éviter les pannes</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="background:var(--light);border-radius:12px;padding:16px 18px;border-left:4px solid #D97E06;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+              <span style="font-size:1.4rem;">🟠</span>
+              <strong style="font-family:'Poppins',sans-serif;font-size:0.92rem;">Chaudière au mazout</strong>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px;font-size:0.83rem;color:#374151;">
+              <div style="display:flex;align-items:flex-start;gap:8px;">
+                <span style="color:#DC2626;font-weight:700;flex-shrink:0;">⚠️ Contrôle périodique obligatoire :</span>
+                <span>tous les <strong>ans</strong></span>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:8px;">
+                <span style="color:#166534;font-weight:700;flex-shrink:0;">💡 Entretien conseillé :</span>
+                <span>annuel également, combiné au contrôle réglementaire</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="background:#FEF3C7;border-radius:10px;padding:14px 16px;margin-bottom:16px;border-left:3px solid #D97E06;">
+          <p style="font-size:0.83rem;color:#92400E;line-height:1.7;margin:0;">⚠️ En cas de non-respect, vous risquez une <strong>amende</strong> et la <strong>mise hors service</strong> de votre installation. Un entretien régulier prolonge aussi significativement la durée de vie de votre chaudière.</p>
+        </div>
+
+        <div style="border-top:1px solid var(--border);padding-top:14px;">
+          <a href="contact.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--orange);font-weight:700;font-size:0.88rem;text-decoration:none;">Planifier mon entretien →</a>
+        </div>
+        </div>
+          </div>
+        </div>
+        <div style="background:#FEF3C7;border-radius:10px;padding:13px 16px;margin-bottom:16px;border-left:3px solid #D97E06;"><p style="font-size:0.83rem;color:#92400E;line-height:1.7;margin:0;">⚠️ <strong>Attestation obligatoire :</strong> le technicien remet une attestation après chaque entretien. Votre assureur peut vous la réclamer en cas de sinistre.</p></div>
+        <div style="border-top:1px solid var(--border);padding-top:14px;"><a href="contact.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--orange);font-weight:700;font-size:0.88rem;text-decoration:none;">Planifier mon entretien →</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="c-panel" id="c-panel-1" hidden>
+      <div class="c-panel__inner">
+        <div class="c-panel__header" style="background:linear-gradient(135deg,#D97E06,#F5920A);">
+          <div class="c-panel__header-left">
+            <span style="font-size:2rem;">💶</span>
+            <div>
+              <span class="c-panel__badge">Primes 2026</span>
+              <h2 class="c-panel__title">Primes énergie 2026 en Wallonie : profitez-en avant fin septembre !</h2>
+            </div>
+          </div>
+          <button class="c-panel__close" aria-label="Fermer">✕</button>
+        </div>
+        <div class="c-panel__body">
+          <div style="background:#FEF3C7;border-radius:10px;padding:14px 16px;margin-bottom:20px;border-left:3px solid #D97E06;">
           <p style="font-size:0.85rem;color:#92400E;line-height:1.7;margin:0;">⚠️ <strong>Régime transitoire en vigueur jusqu'au 30 septembre 2026.</strong> Après cette date, les montants et conditions seront revus. Si vous envisagez des travaux, c'est le moment d'agir — les démarches prennent du temps !</p>
         </div>
 
@@ -243,18 +536,23 @@ footer { background:#1A1A2E; color:rgba(255,255,255,0.75); padding:48px 5% 28px;
           <p style="color:var(--gray);font-size:0.8rem;margin:0;">Vous souhaitez une installation éligible aux primes ?</p>
           <a href="contact.html" style="display:inline-flex;align-items:center;gap:7px;background:var(--orange);color:#fff;padding:10px 20px;border-radius:50px;font-weight:700;font-size:0.85rem;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#D97E06'" onmouseout="this.style.background='var(--orange)'">✉️ Demander un devis pour une installation</a>
         </div>
+        </div>
       </div>
-    </article>
-
-<article id="article-2" style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
-      <div style="background:linear-gradient(135deg,#166534,#22C55E);padding:28px 24px 20px;">
-        <span style="font-size:2.2rem;">♻️</span>
-        <span style="background:rgba(255,255,255,0.2);color:#fff;padding:4px 12px;border-radius:50px;font-size:0.75rem;font-weight:700;margin-left:10px;">Écologie</span>
-      </div>
-      <div style="padding:28px;">
-        <h3 style="font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:14px;line-height:1.4;">Pompe à chaleur à Ciney : est-ce fait pour votre maison ?</h3>
-
-        <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:18px;">La pompe à chaleur (PAC) séduit de plus en plus en Wallonie — mais elle n'est pas la solution miracle pour tous les logements. Voici un tour d'horizon honnête basé sur les différents scénarios rencontrés sur le terrain.</p>
+    </div>
+    <div class="c-panel" id="c-panel-2" hidden>
+      <div class="c-panel__inner">
+        <div class="c-panel__header" style="background:linear-gradient(135deg,#166534,#22C55E);">
+          <div class="c-panel__header-left">
+            <span style="font-size:2rem;">♻️</span>
+            <div>
+              <span class="c-panel__badge">Écologie</span>
+              <h2 class="c-panel__title">Pompe à chaleur à Ciney : est-ce fait pour votre maison ?</h2>
+            </div>
+          </div>
+          <button class="c-panel__close" aria-label="Fermer">✕</button>
+        </div>
+        <div class="c-panel__body">
+          <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:18px;">La pompe à chaleur (PAC) séduit de plus en plus en Wallonie — mais elle n'est pas la solution miracle pour tous les logements. Voici un tour d'horizon honnête basé sur les différents scénarios rencontrés sur le terrain.</p>
 
         <!-- Avantages -->
         <div style="background:#F0FDF4;border-radius:10px;padding:14px 16px;margin-bottom:12px;border-left:3px solid #166534;">
@@ -303,70 +601,115 @@ footer { background:#1A1A2E; color:rgba(255,255,255,0.75); padding:48px 5% 28px;
         <div style="border-top:1px solid var(--border);padding-top:16px;">
           <a href="contact.html" style="display:inline-flex;align-items:center;gap:7px;background:var(--orange);color:#fff;padding:10px 20px;border-radius:50px;font-weight:700;font-size:0.85rem;text-decoration:none;" onmouseover="this.style.background='#D97E06'" onmouseout="this.style.background='var(--orange)'">🏠 Étude gratuite pour mon logement →</a>
         </div>
+        </div>
       </div>
-    </article>
+    </div>
+    <div class="c-panel" id="c-panel-3" hidden>
+      <div class="c-panel__inner">
+        <div class="c-panel__header" style="background:linear-gradient(135deg,#7C3AED,#A855F7);">
+          <div class="c-panel__header-left">
+            <span style="font-size:2rem;">🛢️</span>
+            <div>
+              <span class="c-panel__badge">Réglementation 2026–2035</span>
+              <h2 class="c-panel__title">Fin du mazout en Wallonie — faisons le point</h2>
+            </div>
+          </div>
+          <button class="c-panel__close" aria-label="Fermer">✕</button>
+        </div>
+        <div class="c-panel__body">
+          <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:18px;">Les médias ont déjà relayé l'info, mais il n'est jamais mauvais de rappeler ce grand changement en Wallonie. Le calendrier de sortie du combustible liquide est désormais fixé.</p>
 
-<article id="article-3" style="background:var(--white);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
-      <div style="background:linear-gradient(135deg,#7C3AED,#A855F7);padding:28px 24px 20px;">
-        <span style="font-size:2.2rem;">🛢️</span>
-        <span style="background:rgba(255,255,255,0.2);color:#fff;padding:4px 12px;border-radius:50px;font-size:0.75rem;font-weight:700;margin-left:10px;">Réglementation 2026–2035</span>
-      </div>
-      <div style="padding:24px;">
-        <h3 style="font-family:'Poppins',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:10px;line-height:1.4;">Fin du mazout en Wallonie — faisons le point</h3>
-        <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:14px;">Les médias ont déjà relayé l'info, mais il n'est jamais mauvais de rappeler ce grand changement en Wallonie. Le calendrier de sortie du combustible liquide est désormais fixé :</p>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:18px;">
 
-        <div style="border-left:3px solid #7C3AED;padding-left:14px;margin-bottom:12px;">
-          <p style="font-size:0.85rem;font-weight:700;color:#7C3AED;margin-bottom:4px;">📅 Depuis le 01/01/2026</p>
-          <p style="font-size:0.83rem;color:#374151;line-height:1.6;margin:0;">Interdiction d'installer une chaudière au mazout ou au charbon dans tous les <strong>bâtiments neufs</strong>. Cette décision était déjà effective depuis juin 2025.</p>
+          <div style="background:#FEE2E2;border-radius:12px;padding:14px 18px;border-left:4px solid #DC2626;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+              <span style="font-size:1.1rem;">📅</span>
+              <strong style="font-family:'Poppins',sans-serif;font-size:0.88rem;color:#991B1B;">Depuis le 01/01/2026</strong>
+            </div>
+            <p style="font-size:0.83rem;color:#374151;line-height:1.6;margin:0;">Interdiction d'installer une chaudière au mazout ou au charbon dans tous les <strong>bâtiments neufs</strong>. Cette décision était déjà effective depuis juin 2025.</p>
+          </div>
+
+          <div style="background:#FEF9C3;border-radius:12px;padding:14px 18px;border-left:4px solid #D97E06;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+              <span style="font-size:1.1rem;">📅</span>
+              <strong style="font-family:'Poppins',sans-serif;font-size:0.88rem;color:#854D0E;">Dès le 01/01/2027</strong>
+            </div>
+            <p style="font-size:0.83rem;color:#374151;line-height:1.6;margin:0;">Interdiction d'installer, moderniser ou remplacer une chaudière mazout/charbon si le bâtiment est assimilé à du neuf (rénovation globale ≥ 75 % de l'enveloppe) ou s'il est situé dans une <strong>zone desservie par le gaz naturel</strong>. L'installateur devra informer l'Administration dans les 3 mois suivant les travaux.</p>
+          </div>
+
+          <div style="background:#FEF9C3;border-radius:12px;padding:14px 18px;border-left:4px solid #D97E06;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+              <span style="font-size:1.1rem;">📅</span>
+              <strong style="font-family:'Poppins',sans-serif;font-size:0.88rem;color:#854D0E;">Dès le 01/01/2031</strong>
+            </div>
+            <p style="font-size:0.83rem;color:#374151;line-height:1.6;margin:0;">Interdiction d'installer ou moderniser une chaudière mazout/charbon dans <strong>tous les bâtiments</strong>. Seul le remplacement du brûleur restera autorisé.</p>
+          </div>
+
+          <div style="background:#FEE2E2;border-radius:12px;padding:14px 18px;border-left:4px solid #DC2626;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+              <span style="font-size:1.1rem;">📅</span>
+              <strong style="font-family:'Poppins',sans-serif;font-size:0.88rem;color:#991B1B;">Dès le 01/01/2035</strong>
+            </div>
+            <p style="font-size:0.83rem;color:#374151;line-height:1.6;margin:0;">C'est la <strong>fin totale du mazout en Wallonie</strong> : aucune installation, modernisation ni remplacement de brûleur ne sera autorisé.</p>
+          </div>
+
         </div>
 
-        <div style="border-left:3px solid #D97E06;padding-left:14px;margin-bottom:12px;">
-          <p style="font-size:0.85rem;font-weight:700;color:#D97E06;margin-bottom:4px;">📅 Dès le 01/01/2027</p>
-          <p style="font-size:0.83rem;color:#374151;line-height:1.6;margin:0;">Interdiction d'installer, moderniser ou remplacer une chaudière mazout/charbon si le bâtiment est <strong>assimilé à du neuf</strong> (rénovation globale ≥ 75% de l'enveloppe) ou s'il est situé <strong>dans une zone desservie par le gaz naturel</strong>.<br>L'installateur devra informer l'Administration dans les 3 mois suivant les travaux.</p>
+        <div style="background:#EFF6FF;border-radius:10px;padding:13px 16px;margin-bottom:16px;border-left:3px solid #1D6FA4;">
+          <p style="font-size:0.83rem;color:#1e3a5f;line-height:1.7;margin:0;">💡 Vous êtes concerné et souhaitez anticiper ? Anaël peut vous conseiller sur les alternatives : <strong>pompe à chaleur, chaudière à condensation gaz</strong>, ou autres solutions adaptées à votre logement.</p>
         </div>
 
-        <div style="border-left:3px solid #DC2626;padding-left:14px;margin-bottom:12px;">
-          <p style="font-size:0.85rem;font-weight:700;color:#DC2626;margin-bottom:4px;">📅 Dès le 01/01/2031</p>
-          <p style="font-size:0.83rem;color:#374151;line-height:1.6;margin:0;">Interdiction d'installer ou moderniser une chaudière mazout/charbon dans <strong>tous les bâtiments</strong>. Seul le remplacement du brûleur restera autorisé.</p>
+        <div style="border-top:1px solid var(--border);padding-top:14px;">
+          <a href="contact.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--orange);font-weight:700;font-size:0.88rem;text-decoration:none;">Étudier ma reconversion →</a>
         </div>
-
-        <div style="border-left:3px solid #111827;padding-left:14px;margin-bottom:16px;">
-          <p style="font-size:0.85rem;font-weight:700;color:#111827;margin-bottom:4px;">📅 Dès le 01/01/2035</p>
-          <p style="font-size:0.83rem;color:#374151;line-height:1.6;margin:0;">C'est la <strong>fin totale du mazout en Wallonie</strong> : aucune installation, modernisation ni remplacement de brûleur ne sera autorisé.</p>
         </div>
-
-        <p style="color:var(--gray);font-size:0.83rem;line-height:1.6;margin-bottom:16px;">Vous êtes concerné et souhaitez anticiper ? Anaël peut vous conseiller sur les alternatives : pompe à chaleur, chaudière à condensation gaz, ou autres solutions adaptées à votre logement.</p>
-        <a href="contact.html" style="color:#7C3AED;font-weight:700;font-size:0.88rem;text-decoration:none;">Me faire conseiller sur les alternatives →</a>
+          </div>
+        </div>
+        <div style="background:#EFF6FF;border-radius:10px;padding:13px 16px;margin-bottom:16px;border-left:3px solid #1D6FA4;"><p style="font-size:0.83rem;color:#1e3a5f;line-height:1.7;margin:0;">💡 Remplacer une chaudière mazout en urgence est toujours plus coûteux que planifier la transition. Étudiez dès maintenant les alternatives : PAC, biomasse ou hybride.</p></div>
+        <div style="border-top:1px solid var(--border);padding-top:14px;"><a href="contact.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--orange);font-weight:700;font-size:0.88rem;text-decoration:none;">Étudier ma reconversion →</a></div>
+        </div>
       </div>
-    </article>
-
-<article id="article-4" style="background:var(--white);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
-      <div style="background:linear-gradient(135deg,#0F766E,#14B8A6);padding:28px 24px 20px;">
-        <span style="font-size:2.2rem;">📚</span>
-        <span style="background:rgba(255,255,255,0.2);color:#fff;padding:4px 12px;border-radius:50px;font-size:0.75rem;font-weight:700;margin-left:10px;">Ressource technique</span>
+    </div>
+    <div class="c-panel" id="c-panel-4" hidden>
+      <div class="c-panel__inner">
+        <div class="c-panel__header" style="background:linear-gradient(135deg,#0F766E,#14B8A6);">
+          <div class="c-panel__header-left">
+            <span style="font-size:2rem;">📚</span>
+            <div>
+              <span class="c-panel__badge">Ressource technique</span>
+              <h2 class="c-panel__title">Vous êtes passionné de technique ? Plongez dans EnergiePlus !</h2>
+            </div>
+          </div>
+          <button class="c-panel__close" aria-label="Fermer">✕</button>
+        </div>
+        <div class="c-panel__body">
+          <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:16px;"><strong>EnergiePlus</strong> est le site de référence belge sur le chauffage, la ventilation et les énergies renouvelables, développé par l'UCLouvain. Une mine d'or pour comprendre vos installations en profondeur.</p>
+        <div style="background:var(--light);border-radius:12px;padding:16px 18px;margin-bottom:16px;">
+          <ul style="margin-left:18px;font-size:0.83rem;color:#374151;line-height:2;">
+            <li>Fiches techniques chaudières, PAC, ventilation, solaire thermique</li>
+            <li>Guides sur le dimensionnement et la régulation</li>
+            <li>Outils de calcul et tableaux de référence</li>
+            <li>Normes et réglementations belges expliquées</li>
+          </ul>
+        </div>
+        <div style="border-top:1px solid var(--border);padding-top:14px;"><a href="https://www.energieplus-lesite.be" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#0F766E;color:#fff;padding:8px 16px;border-radius:50px;font-weight:700;font-size:0.82rem;text-decoration:none;">🔗 Visiter EnergiePlus →</a></div>
+        </div>
       </div>
-      <div style="padding:24px;">
-        <h3 style="font-family:'Poppins',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:10px;line-height:1.4;">Vous êtes passionné de technique ? Plongez dans EnergiePlus !</h3>
-        <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:14px;">Vous aimez comprendre comment fonctionne votre installation de chauffage, les lois physiques derrière la thermodynamique, ou les détails techniques des systèmes énergétiques ? <strong>EnergiePlus</strong> est fait pour vous.</p>
-        <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:14px;">Développé par l'Architecture et Climat de l'UCLouvain, ce site de référence belge propose des explications approfondies et rigoureuses sur tous les aspects du chauffage, de la ventilation, de l'isolation et des énergies renouvelables. Une vraie mine d'or pour les curieux et les professionnels.</p>
-        <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:20px;">C'est d'ailleurs l'une des sources que nous consultons régulièrement pour rester à jour sur les meilleures pratiques du secteur.</p>
-        <a href="https://energieplus-lesite.be/#" target="_blank" rel="noopener"
-           style="display:inline-flex;align-items:center;gap:8px;background:#0F766E;color:#fff;padding:10px 20px;border-radius:50px;font-weight:700;font-size:0.88rem;text-decoration:none;transition:opacity 0.2s;"
-           onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
-          🔗 Visiter EnergiePlus-LeSite.be
-        </a>
-      </div>
-    </article>
-
-    <article id="article-5" style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
-      <div style="background:linear-gradient(135deg,#991B1B,#DC2626);padding:28px 24px 20px;">
-        <span style="font-size:2.2rem;">🧾</span>
-        <span style="background:rgba(255,255,255,0.2);color:#fff;padding:4px 12px;border-radius:50px;font-size:0.75rem;font-weight:700;margin-left:10px;">TVA — Juillet 2025</span>
-      </div>
-      <div style="padding:28px;">
-        <h3 style="font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:14px;line-height:1.4;">TVA à 21 % sur les chaudières fossiles : ce qui change pour vous</h3>
-
-        <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:16px;">Depuis le <strong>29 juillet 2025</strong> (publication de la loi-programme au Moniteur Belge), la livraison et l'installation d'une chaudière alimentée par des <strong>combustibles fossiles</strong> (gaz naturel, mazout, charbon) ne bénéficie plus du taux réduit de TVA de 6 %. Le taux normal de <strong>21 %</strong> s'applique désormais.</p>
+    </div>
+    <div class="c-panel" id="c-panel-5" hidden>
+      <div class="c-panel__inner">
+        <div class="c-panel__header" style="background:linear-gradient(135deg,#991B1B,#DC2626);">
+          <div class="c-panel__header-left">
+            <span style="font-size:2rem;">🧾</span>
+            <div>
+              <span class="c-panel__badge">TVA — Juillet 2025</span>
+              <h2 class="c-panel__title">TVA à 21 % sur les chaudières fossiles : ce qui change pour vous</h2>
+            </div>
+          </div>
+          <button class="c-panel__close" aria-label="Fermer">✕</button>
+        </div>
+        <div class="c-panel__body">
+          <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:16px;">Depuis le <strong>29 juillet 2025</strong> (publication de la loi-programme au Moniteur Belge), la livraison et l'installation d'une chaudière alimentée par des <strong>combustibles fossiles</strong> (gaz naturel, mazout, charbon) ne bénéficie plus du taux réduit de TVA de 6 %. Le taux normal de <strong>21 %</strong> s'applique désormais.</p>
 
         <div style="background:var(--light);border-radius:10px;padding:14px 16px;margin-bottom:12px;border-left:3px solid #DC2626;">
           <p style="font-size:0.85rem;font-weight:700;color:#991B1B;margin-bottom:8px;">❌ Désormais taxés à 21 %</p>
@@ -407,18 +750,23 @@ footer { background:#1A1A2E; color:rgba(255,255,255,0.75); padding:48px 5% 28px;
           <a href="https://finances.belgium.be/fr/entreprises/tva/taux_de_tva/modifications/chaudieres-fossiles" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#DC2626;color:#fff;padding:8px 16px;border-radius:50px;font-weight:700;font-size:0.82rem;text-decoration:none;margin-right:8px;">🔗 Circulaire 2025/C/47 — SPF Finances</a>
           <a href="contact.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--orange);font-weight:700;font-size:0.88rem;text-decoration:none;">Me faire conseiller →</a>
         </div>
+        </div>
       </div>
-    </article>
-
-    <article id="article-6" style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
-      <div style="background:linear-gradient(135deg,#0369A1,#0EA5E9);padding:28px 24px 20px;">
-        <span style="font-size:2.2rem;">💧</span>
-        <span style="background:rgba(255,255,255,0.2);color:#fff;padding:4px 12px;border-radius:50px;font-size:0.75rem;font-weight:700;margin-left:10px;">Sanitaire</span>
-      </div>
-      <div style="padding:28px;">
-        <h3 style="font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:14px;line-height:1.4;">Adoucisseur d'eau : utile chez vous en Wallonie ?</h3>
-
-        <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:16px;">En Belgique, l'eau du robinet n'est pas la même partout. Sa dureté — mesurée en degrés français (°fH) — détermine si un adoucisseur d'eau est un investissement utile ou superflu. <strong>Première règle : connaître la dureté de votre eau avant tout achat.</strong></p>
+    </div>
+    <div class="c-panel" id="c-panel-6" hidden>
+      <div class="c-panel__inner">
+        <div class="c-panel__header" style="background:linear-gradient(135deg,#0369A1,#0EA5E9);">
+          <div class="c-panel__header-left">
+            <span style="font-size:2rem;">💧</span>
+            <div>
+              <span class="c-panel__badge">Sanitaire</span>
+              <h2 class="c-panel__title">Adoucisseur d'eau : utile chez vous en Wallonie ?</h2>
+            </div>
+          </div>
+          <button class="c-panel__close" aria-label="Fermer">✕</button>
+        </div>
+        <div class="c-panel__body">
+          <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:16px;">En Belgique, l'eau du robinet n'est pas la même partout. Sa dureté — mesurée en degrés français (°fH) — détermine si un adoucisseur d'eau est un investissement utile ou superflu. <strong>Première règle : connaître la dureté de votre eau avant tout achat.</strong></p>
 
         <!-- Carte dureté -->
         <div style="background:var(--light);border-radius:10px;padding:14px 16px;margin-bottom:16px;">
@@ -482,18 +830,23 @@ footer { background:#1A1A2E; color:rgba(255,255,255,0.75); padding:48px 5% 28px;
           <a href="https://www.facq.be/fr/particuliers/nos-conseils-pour-vos-projets/adoucisseur-eau-utile-en-belgique" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#0369A1;color:#fff;padding:8px 16px;border-radius:50px;font-weight:700;font-size:0.78rem;text-decoration:none;">🔗 Guide complet Facq 2026</a>
           <a href="contact.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--orange);font-weight:700;font-size:0.88rem;text-decoration:none;">Me faire conseiller →</a>
         </div>
+        </div>
       </div>
-    </article>
-
-    <article id="article-7" style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:transform 0.3s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
-      <div style="background:linear-gradient(135deg,#0F766E,#14B8A6);padding:28px 24px 20px;">
-        <span style="font-size:2.2rem;">🚿</span>
-        <span style="background:rgba(255,255,255,0.2);color:#fff;padding:4px 12px;border-radius:50px;font-size:0.75rem;font-weight:700;margin-left:10px;">Économies</span>
-      </div>
-      <div style="padding:28px;">
-        <h3 style="font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:14px;line-height:1.4;">Boiler thermodynamique : rentable en combien de temps ?</h3>
-
-        <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:18px;">Le boiler thermodynamique capte les calories de l'air ambiant pour chauffer l'eau — comme un réfrigérateur à l'envers. Résultat : <strong>60 à 70 % d'énergie en moins</strong> qu'un boiler électrique classique. Mais est-il vraiment rentable ? La réponse dépend de comment on pose la question.</p>
+    </div>
+    <div class="c-panel" id="c-panel-7" hidden>
+      <div class="c-panel__inner">
+        <div class="c-panel__header" style="background:linear-gradient(135deg,#0F766E,#14B8A6);">
+          <div class="c-panel__header-left">
+            <span style="font-size:2rem;">🚿</span>
+            <div>
+              <span class="c-panel__badge">Économies</span>
+              <h2 class="c-panel__title">Boiler thermodynamique : rentable en combien de temps ?</h2>
+            </div>
+          </div>
+          <button class="c-panel__close" aria-label="Fermer">✕</button>
+        </div>
+        <div class="c-panel__body">
+          <p style="color:var(--gray);font-size:0.88rem;line-height:1.7;margin-bottom:18px;">Le boiler thermodynamique capte les calories de l'air ambiant pour chauffer l'eau — comme un réfrigérateur à l'envers. Résultat : <strong>60 à 70 % d'énergie en moins</strong> qu'un boiler électrique classique. Mais est-il vraiment rentable ? La réponse dépend de comment on pose la question.</p>
 
         <!-- COP -->
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px;">
@@ -581,8 +934,10 @@ footer { background:#1A1A2E; color:rgba(255,255,255,0.75); padding:48px 5% 28px;
           <a href="https://www.desco.be/fr-be/outils-de-calcul/retour-sur-investissement-boiler-thermodynamique" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#0F766E;color:#fff;padding:8px 16px;border-radius:50px;font-weight:700;font-size:0.78rem;text-decoration:none;">🧮 Calculer mon retour sur investissement — Desco</a>
           <a href="contact.html" style="display:inline-flex;align-items:center;gap:6px;color:var(--orange);font-weight:700;font-size:0.88rem;text-decoration:none;">Demander un devis →</a>
         </div>
+        </div>
       </div>
-    </article>
+    </div>
+    </div>
 
   </div>
 </section>
@@ -689,5 +1044,101 @@ window.addEventListener('scroll',function(){
     <button onclick="closeModal('modal-confidentialite')" style="margin-top:32px;background:#F5920A;color:#fff;border:none;padding:12px 28px;border-radius:50px;font-family:'Poppins',sans-serif;font-weight:700;cursor:pointer;">Fermer</button>
   </div>
 </div>
+
+
+
+<script>
+/* ── Conseils Grid + Panel ── */
+(function() {
+  var grid = document.querySelector('.c-grid');
+  if (!grid) return;
+
+  var openIdx = null;
+
+  function openPanel(idx) {
+    // Close any open panel
+    if (openIdx !== null) closePanel(openIdx, false);
+
+    var card = grid.querySelector('[data-idx="' + idx + '"]');
+    var panel = document.getElementById('c-panel-' + idx);
+    if (!card || !panel) return;
+
+    // Insert panel after the row containing this card
+    // In CSS grid, panels span full width via grid-column:1/-1
+    // Insert after the card's nextSibling or at end of grid
+    panel.hidden = false;
+    card.after(panel);
+    card.setAttribute('aria-expanded', 'true');
+
+    var cta = card.querySelector('.c-card__cta');
+    if (cta) cta.innerHTML = 'Fermer <span class="c-card__arrow" style="transform:rotate(90deg)">→</span>';
+
+    openIdx = idx;
+
+    // Smooth scroll to panel
+    setTimeout(function() {
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 50);
+  }
+
+  function closePanel(idx, resetOpen) {
+    var card = grid.querySelector('[data-idx="' + idx + '"]');
+    var panel = document.getElementById('c-panel-' + idx);
+    if (!panel) return;
+    panel.hidden = true;
+    // Move panel back to end of grid (out of flow)
+    grid.appendChild(panel);
+    if (card) {
+      card.setAttribute('aria-expanded', 'false');
+      var cta = card.querySelector('.c-card__cta');
+      if (cta) cta.innerHTML = 'Lire la suite <span class="c-card__arrow">→</span>';
+    }
+    if (resetOpen !== false) openIdx = null;
+  }
+
+  // Card clicks
+  grid.addEventListener('click', function(e) {
+    var card = e.target.closest('.c-card');
+    var closeBtn = e.target.closest('.c-panel__close');
+
+    if (closeBtn) {
+      var panel = closeBtn.closest('.c-panel');
+      var idx = panel.id.replace('c-panel-', '');
+      closePanel(idx);
+      return;
+    }
+
+    if (card) {
+      var idx = card.getAttribute('data-idx');
+      if (openIdx === idx) { closePanel(idx); }
+      else { openPanel(idx); }
+    }
+  });
+
+  // Keyboard
+  grid.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      var card = e.target.closest('.c-card');
+      if (card) {
+        e.preventDefault();
+        card.click();
+      }
+    }
+    if (e.key === 'Escape' && openIdx !== null) closePanel(openIdx);
+  });
+
+  // URL hash navigation (from index.html links)
+  var hash = window.location.hash;
+  if (hash) {
+    var id = hash.replace('#', '');
+    var card = grid.querySelector('[data-idx="' + id.replace('article-','') + '"]');
+    if (card) {
+      setTimeout(function() {
+        openPanel(id.replace('article-',''));
+      }, 200);
+    }
+  }
+})();
+</script>
 </body>
 </html>
