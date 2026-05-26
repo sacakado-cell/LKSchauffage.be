@@ -3,50 +3,50 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://lks-chauffage.be/</loc>
+    <loc>https://lkschauffage.be/</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="fr-BE" href="https://lks-chauffage.be/"/>
+    <xhtml:link rel="alternate" hreflang="fr-BE" href="https://lkschauffage.be/"/>
   </url>
 
   <url>
-    <loc>https://lks-chauffage.be/#services</loc>
+    <loc>https://lkschauffage.be/#services</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://lks-chauffage.be/#about</loc>
+    <loc>https://lkschauffage.be/#about</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://lks-chauffage.be/#zone</loc>
+    <loc>https://lkschauffage.be/#zone</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://lks-chauffage.be/#conseils</loc>
+    <loc>https://lkschauffage.be/#conseils</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://lks-chauffage.be/#temoignages</loc>
+    <loc>https://lkschauffage.be/#temoignages</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://lks-chauffage.be/#contact</loc>
+    <loc>https://lkschauffage.be/#contact</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
