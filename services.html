@@ -50,18 +50,18 @@ section { padding:70px 5%; }
 .section-tag.green { background:#DCFCE7; color:#166534; }
 h2.section-title { font-family:'Poppins',sans-serif; font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:var(--dark); margin-bottom:12px; line-height:1.2; }
 h2.section-title span { color:var(--orange); }
-.services-cat { margin-bottom:64px; }
+
 .services-cat:last-child { margin-bottom:0; }
-.cat-header { display:flex; align-items:center; gap:16px; margin-bottom:32px; padding-bottom:16px; border-bottom:2px solid var(--border); }
-.cat-icon { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:1.6rem; flex-shrink:0; }
-.cat-title { font-family:'Poppins',sans-serif; font-weight:700; font-size:1.3rem; }
-.cat-sub { color:var(--gray); font-size:0.88rem; margin-top:2px; }
-.services-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:20px; }
-.service-item { background:var(--white); border-radius:16px; padding:24px 22px; box-shadow:var(--shadow); border-left:4px solid var(--orange); transition:all 0.25s; display:flex; align-items:flex-start; gap:14px; }
+
+
+
+
+
+
 .service-item:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); }
 .service-item.blue { border-left-color:var(--blue); }
 .service-item.green { border-left-color:#22C55E; }
-.service-emoji { font-size:1.8rem; flex-shrink:0; margin-top:2px; }
+
 .service-item h3 { font-family:'Poppins',sans-serif; font-weight:700; font-size:0.95rem; margin-bottom:6px; color:var(--dark); }
 .service-item p { color:var(--gray); font-size:0.85rem; line-height:1.6; }
 .cta-band { background:var(--blue-dark); padding:56px 5%; text-align:center; }
@@ -86,7 +86,7 @@ footer { background:#1A1A2E; color:rgba(255,255,255,0.75); padding:48px 5% 28px;
 .float-btn:hover { transform:scale(1.05); }
 .float-wa { background:#25D366; box-shadow:0 6px 24px rgba(37,211,102,0.5); }
 @media(max-width:900px) { .footer-grid { grid-template-columns:1fr 1fr; } }
-@media(max-width:680px) { .nav-links { display:none; } .hamburger { display:flex; } .footer-grid { grid-template-columns:1fr; } .services-grid { grid-template-columns:1fr; } }
+@media(max-width:680px) { .nav-links { display:none; } .hamburger { display:flex; } .footer-grid { grid-template-columns:1fr; }  }
 
 @media(max-width:768px){
   .nav-links { display:none !important; }
@@ -102,9 +102,13 @@ footer { background:#1A1A2E; color:rgba(255,255,255,0.75); padding:48px 5% 28px;
 
 
 
-/* ══ CENTRAGE UNIVERSEL — TITRES & BADGES ══════════════════════ */
 
-/* Wrapper pour toutes les sections */
+
+
+
+
+
+/* ══ CENTRAGE VERSION A — Éléments centrés, paragraphes à gauche ════ */
 section {
   display: flex;
   flex-direction: column;
@@ -113,28 +117,17 @@ section {
 section > * {
   width: 100%;
   max-width: 1100px;
+  box-sizing: border-box;
 }
-
-/* Badges */
-.section-tag {
+.section-tag,
+span.section-tag,
+.section-tag.blue {
   display: block;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 14px;
   width: fit-content;
 }
-span.section-tag, .section-tag.blue {
-  display: block;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  width: fit-content;
-}
-
-/* Titres et sous-titres */
-h2.section-title {
-  text-align: center;
-}
+h2.section-title { text-align: center; }
 .section-sub {
   text-align: center;
   margin-left: auto;
@@ -142,70 +135,110 @@ h2.section-title {
   max-width: 640px;
   display: block;
 }
-
-/* Wrappers max-width inline → toujours centrés */
 div[style*="max-width"] {
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
-
-/* Toutes les grilles → centrées */
 [style*="grid-template-columns"] {
   justify-content: center !important;
 }
+/* Paragraphes : lisibilité gauche */
+p, li, ul, ol { text-align: left; }
+/* ═══════════════════════════════════════════════════════════════════ */
 
-/* ═══════════════════════════════════════════════════════════════ */
 
-
-/* ══ CENTRAGE COMPLÉMENTAIRE ════════════════════════════════════ */
-
-/* Sub-pages: cat-headers in services */
-.cat-header { justify-content: center !important; }
-.cat-title   { text-align: center; }
-.cat-sub     { text-align: center; }
-.services-grid { justify-content: center; }
-
-/* Marques section headers */
-.section-header-left { text-align: center; }
-
-/* Réalisations sub-headers */
-.realisations-header { text-align: center; }
-
-/* Avis cards grid */
-.avis-grid { justify-content: center; }
-
-/* Any inline section-tag that's a span (not yet centered) */
-section > span.section-tag,
-section > div > span.section-tag {
-  display: block;
-  text-align: center;
-  margin: 0 auto 14px;
+/* ── Services Accordion ────────────────────────────────────────── */
+.svc-cat {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  margin-bottom: 16px;
 }
-
-/* Ensure all h3 inside service/marque blocks are centered */
-.cat-content h3,
-.services-cat h3 { text-align: center; }
-
-/* Section intro text blocks */
-section > h2,
-section > p,
-section > span {
-  text-align: center;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+.svc-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 24px;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.15s;
 }
-
-/* Keep paragraph text readable (left) inside content blocks */
-.service-item p,
-.service-item li,
-.c-panel__body p,
-.c-panel__body li,
-.c-panel__body ul,
-.about-text p,
-.avis-card p { text-align: left; }
-
-/* ═══════════════════════════════════════════════════════════════ */
+.svc-header:hover { opacity: 0.88; }
+.svc-icon {
+  font-size: 1.5rem;
+  width: 46px; height: 46px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.svc-header-text { flex: 1; min-width: 0; }
+.svc-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0 0 2px;
+  color: var(--dark);
+}
+.svc-sub {
+  font-size: 0.8rem;
+  color: var(--gray);
+  margin: 0;
+}
+.svc-chevron {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--light);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem;
+  color: var(--gray);
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+.svc-cat[data-open="true"] .svc-chevron { transform: rotate(180deg); }
+.svc-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1), padding 0.3s;
+  padding: 0 24px;
+}
+.svc-cat[data-open="true"] .svc-body {
+  max-height: 6000px;
+  padding: 0 24px 28px;
+}
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  justify-content: center;
+}
+.svc-item {
+  background: var(--light);
+  border-radius: 12px;
+  padding: 18px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border-left: 3px solid var(--orange);
+}
+.svc-item.blue  { border-left-color: var(--blue); }
+.svc-item.green { border-left-color: #166534; }
+.svc-item-emoji { font-size: 1.4rem; flex-shrink: 0; margin-top: 1px; }
+.svc-item h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  margin: 0 0 5px;
+  color: var(--dark);
+}
+.svc-item p {
+  font-size: 0.81rem;
+  color: var(--gray);
+  line-height: 1.6;
+  margin: 0;
+  text-align: left;
+}
+/* ─────────────────────────────────────────────────────────────── */
 
 </style>
 </head>
@@ -251,151 +284,224 @@ section > span {
 
 <section style="background:var(--light);">
 
+
   <!-- TECHNIQUE -->
-  <div class="services-cat">
-    <div class="cat-header">
-      <div class="cat-icon" style="background:var(--orange-light);">🔥</div>
-      <div>
-        <p class="cat-title" style="color:var(--orange-dark);">Technique & Chauffage</p>
-        <p class="cat-sub">Installation et mise en service de systèmes de chauffage et de production d'eau chaude</p>
+  
+  <div class="svc-cat" id="svc-technique" data-open="false">
+    <div class="svc-header" style="background:linear-gradient(135deg,#F5920A,#D97E06);">
+      <div class="svc-icon" style="background:rgba(0,0,0,0.12);">🔥</div>
+      <div class="svc-header-text">
+        <p class="svc-title" style="color:#fff;">Technique & Chauffage</p>
+        <p class="svc-sub" style="color:rgba(255,255,255,0.85);">Installation, entretien et dépannage de vos équipements de chauffage</p>
       </div>
+      <div class="svc-chevron" style="background:rgba(255,255,255,0.25);color:#fff;">▼</div>
     </div>
-    <div class="services-grid">
-      <div class="service-item">
-        <span class="service-emoji">🔥</span>
+    <div class="svc-body">
+      <div class="svc-grid">
+            <div class="svc-item">
+        <span class="svc-item-emoji">🔧</span>
+        <div>
+          <h3>Entretien chaudière mazout ou gaz</h3>
+          <p>Entretien annuel ou bisannuel de votre chaudière selon le type de combustible. Nettoyage du brûleur, contrôle de combustion, vérification des sécurités. Attestation délivrée après chaque intervention — indispensable pour votre assurance et conforme à la réglementation wallonne.</p>
+        </div>
+      </div>
+<div class="svc-item">
+        <span class="svc-item-emoji">🔥</span>
         <div>
           <h3>Installation de chaudières</h3>
-          <p>Chaudières à condensation gaz ou mazout, toutes marques. Remplacement d'ancienne installation, mise aux normes, installation neuve. Technicien multi-marques agréé <strong>Cédicol, G1</strong> et habilité au <strong>diagnostic approfondi de type 1</strong>.</p>
+          <p>Chaudières à condensation gaz ou mazout, toutes marques. Remplacement d&#39;ancienne installation, mise aux normes, installation neuve. Technicien multi-marques agréé <strong>Cédicol, G1</strong> et habilité au <strong>diagnostic approfondi de type 1</strong>.</p>
         </div>
       </div>
-      <div class="service-item">
-        <span class="service-emoji">🔥❄️</span>
+      <div class="svc-item">
+        <span class="svc-item-emoji">🔥❄️</span>
         <div>
-          <h3>Pompe à chaleur &amp; climatisation</h3>
-          <p>Installation de pompes à chaleur <strong>air/eau</strong> (pour le chauffage central), <strong>air/air</strong> (split mural ou gainable) et <strong>géothermiques</strong>. Certains modèles sont réversibles : ils chauffent en hiver et rafraîchissent en été. Consommation 3 à 4× inférieure à une chaudière classique.</p>
+          <h3>Pompe à chaleur & climatisation</h3>
+          <p>Installation de pompes à chaleur <strong>air/eau</strong>, <strong>air/air</strong> et <strong>géothermiques</strong>. Certains modèles sont réversibles : ils chauffent en hiver et rafraîchissent en été. Consommation 3 à 4× inférieure à une chaudière classique.</p>
         </div>
       </div>
-      <div class="service-item">
-        <span class="service-emoji">💧</span>
+      <div class="svc-item">
+        <span class="svc-item-emoji">💧</span>
         <div>
           <h3>Production d'eau chaude sanitaire</h3>
-          <p><strong>Boiler électrique</strong> — solution simple et économique à l'achat. <strong>Boiler à gaz</strong> — eau chaude instantanée ou à accumulation. <strong>Boiler thermodynamique</strong> — pompe à chaleur dédiée à l'ECS, 60 à 70 % d'économie d'énergie vs électrique. </p>
+          <p><strong>Boiler électrique</strong> — solution simple et économique à l&#39;achat. <strong>Boiler à gaz</strong> — eau chaude instantanée ou à accumulation. <strong>Boiler thermodynamique</strong> — pompe à chaleur dédiée ECS, 60 à 70 % d&#39;économie d&#39;énergie vs électrique.</p>
         </div>
       </div>
-      <div class="service-item">
-        <span class="service-emoji">💨</span>
+      <div class="svc-item">
+        <span class="svc-item-emoji">💨</span>
         <div>
           <h3>Système de ventilation</h3>
-          <p>Installation de VMC simple ou double flux (Zehnder, Duco, Renson). Qualité d'air optimale dans votre habitation, conforme aux normes belges.</p>
+          <p>Installation de VMC simple ou double flux (Zehnder, Duco, Renson). Qualité d&#39;air optimale dans votre habitation, conforme aux normes belges.</p>
         </div>
       </div>
-      <div class="service-item">
-        <span class="service-emoji">🔧</span>
+      <div class="svc-item">
+        <span class="svc-item-emoji">🔧</span>
         <div>
           <h3>Tuyauterie gaz</h3>
-          <p>Installation, modification et contrôle des conduites de gaz intérieures. LKS Chauffage assure le <strong>dimensionnement correct</strong> des tuyauteries (diamètre, pression, longueur de parcours) pour garantir un débit suffisant à tous vos appareils et la sécurité de l'installation.</p>
+          <p>Installation, modification et contrôle des conduites de gaz intérieures. LKS Chauffage assure le <strong>dimensionnement correct</strong> des tuyauteries (diamètre, pression, longueur de parcours) pour garantir un débit suffisant à tous vos appareils.</p>
         </div>
       </div>
-      <div class="service-item">
-        <span class="service-emoji">🌡️</span>
+      <div class="svc-item">
+        <span class="svc-item-emoji">🌡️</span>
         <div>
           <h3>Radiateurs</h3>
           <p>Pose et remplacement de radiateurs panneaux, basse hauteur ou design. Connexions soignées, finitions impeccables. Toutes marques : Radson, Uni8, IMI Heimeier.</p>
         </div>
       </div>
-      <div class="service-item">
-        <span class="service-emoji">🏠</span>
+      <div class="svc-item">
+        <span class="svc-item-emoji">🏠</span>
         <div>
           <h3>Ramonage</h3>
-          <p>Le ramonage est une <strong>obligation légale en Belgique</strong> : au moins une fois par an pour les installations au bois ou au mazout. Il garantit le bon tirage, prévient les risques d'intoxication au monoxyde de carbone et les incendies de conduit. LKS Chauffage intervient pour le ramonage et le contrôle de vos conduits de cheminée et d'évacuation.</p>
+          <p>Le ramonage est une <strong>obligation légale en Belgique</strong> : au moins une fois par an pour les installations au bois ou au mazout. Prévention des risques d&#39;intoxication au monoxyde de carbone et des incendies de conduit.</p>
         </div>
+      </div>
+      <div class="svc-item">
+        <span class="svc-item-emoji">💧</span>
+        <div>
+          <h3>Installation d'adoucisseur d'eau</h3>
+          <p>Installation et mise en service d&#39;adoucisseurs d&#39;eau par échange ionique. Dimensionnement adapté à votre consommation et à la dureté de l&#39;eau locale. Protège efficacement votre chaudière, vos canalisations et votre robinetterie contre le calcaire.</p>
+        </div>
+      </div>
       </div>
     </div>
   </div>
 
-  <!-- SANITAIRE -->
-  <div class="services-cat">
-    <div class="cat-header">
-      <div class="cat-icon" style="background:var(--blue-light);">🚿</div>
-      <div>
-        <p class="cat-title" style="color:var(--blue-dark);">Sanitaire & Salle de bain</p>
-        <p class="cat-sub">Conception et réalisation de vos installations sanitaires, du simple remplacement à la rénovation complète</p>
+  <div class="svc-cat" id="svc-salle-de-bain" data-open="false">
+    <div class="svc-header" style="background:linear-gradient(135deg,#1D6FA4,#2187C3);">
+      <div class="svc-icon" style="background:rgba(0,0,0,0.12);">🚿</div>
+      <div class="svc-header-text">
+        <p class="svc-title" style="color:#fff;">Rénovation de salle de bain</p>
+        <p class="svc-sub" style="color:rgba(255,255,255,0.85);">Prise en charge complète de votre projet de A à Z — plomberie, carrelage, électricité, finitions</p>
       </div>
+      <div class="svc-chevron" style="background:rgba(255,255,255,0.25);color:#fff;">▼</div>
     </div>
-    <div class="services-grid">
-      <div class="service-item blue">
-        <span class="service-emoji">🚿</span>
+    <div class="svc-body">
+      <div class="svc-grid">
+      <div class="svc-item blue">
+        <span class="svc-item-emoji">🛁</span>
         <div>
-          <h3>Installation de douche</h3>
-          <p>Douche standard ou italienne, cabine, receveur extra-plat. Robinetterie Hansgrohe, Grohe, Hansa ou Novelli.</p>
+          <h3>Rénovation complète de salle de bain</h3>
+          <p>Transformation complète de votre salle de bain, de la démolition à la finition. Gestion de chaque aspect du projet pour un espace entièrement renouvelé et fonctionnel.</p>
         </div>
       </div>
-      <div class="service-item blue">
-        <span class="service-emoji">🛁</span>
+      <div class="svc-item blue">
+        <span class="svc-item-emoji">🔧</span>
         <div>
-          <h3>Installation de baignoire</h3>
-          <p>Pose de baignoire encastrée, îlot ou d'angle. Raccordement robinetterie et évacuation soignés.</p>
+          <h3>Rénovation partielle de salle de bain</h3>
+          <p>Solutions sur mesure pour une mise à jour partielle : remplacement d&#39;éléments existants ou ajout de nouvelles fonctionnalités selon vos préférences.</p>
         </div>
       </div>
-      <div class="service-item blue">
-        <span class="service-emoji">🏠</span>
+      <div class="svc-item blue">
+        <span class="svc-item-emoji">🔩</span>
         <div>
-          <h3>Salle de bain complète</h3>
-          <p>Conception et réalisation complète de votre salle de bain : douche, baignoire, lavabo, WC, robinetterie.</p>
+          <h3>Encastrement de tous les tuyaux d'eau</h3>
+          <p>Installation précise et soignée de tous les tuyaux d&#39;eau. Disposition efficace maximisant l&#39;espace et minimisant les risques de fuites.</p>
         </div>
       </div>
-      <div class="service-item blue">
-        <span class="service-emoji">🚽</span>
+      <div class="svc-item blue">
+        <span class="svc-item-emoji">🚿</span>
         <div>
-          <h3>WC & toilettes</h3>
-          <p>Installation ou remplacement de WC suspendu ou au sol, lave-mains, chasse d'eau. Finitions propres.</p>
+          <h3>Installation douche italienne</h3>
+          <p>Création d&#39;un espace de douche moderne et sans obstacle, alliant style et praticité pour une expérience incomparable.</p>
         </div>
       </div>
-      <div class="service-item blue">
-        <span class="service-emoji">🔩</span>
+      <div class="svc-item blue">
+        <span class="svc-item-emoji">🚿</span>
         <div>
-          <h3>Robinetterie</h3>
-          <p>Remplacement ou installation de robinetterie de salle de bain, cuisine ou radiateurs. Marques sélectionnées.</p>
+          <h3>Remplacement baignoire par douche italienne</h3>
+          <p>Transformation complète : dépose de la baignoire et installation d&#39;une douche italienne spacieuse et accessible. Résultat spectaculaire.</p>
         </div>
+      </div>
+      <div class="svc-item blue">
+        <span class="svc-item-emoji">🟫</span>
+        <div>
+          <h3>Pose de revêtements muraux</h3>
+          <p>Pose de revêtements muraux de qualité : <strong>panneaux vinyl ou PVC haute qualité, carrelage</strong>. Finitions impeccables et durables pour une salle de bain résistante à l&#39;humidité.</p>
+        </div>
+      </div>
+      <div class="svc-item blue">
+        <span class="svc-item-emoji">🏗️</span>
+        <div>
+          <h3>Rattrapage des murs et création de cloisons</h3>
+          <p>Rattrapage des murs et création de nouvelles cloisons pour optimiser l&#39;espace. Finitions impeccables et structure solide.</p>
+        </div>
+      </div>
+      <div class="svc-item blue">
+        <span class="svc-item-emoji">🚽</span>
+        <div>
+          <h3>Installation sanitaire</h3>
+          <p>Installation professionnelle de tous les équipements sanitaires (WC, lavabos, robinetterie). Intégration harmonieuse dans votre projet.</p>
+        </div>
+      </div>
+      <div class="svc-item blue">
+        <span class="svc-item-emoji">⚡</span>
+        <div>
+          <h3>Modification électricité et éclairage</h3>
+          <p>Modifications électriques et d&#39;éclairage selon les normes de sécurité en vigueur. Éclairage optimal pour votre salle de bain.</p>
+        </div>
+      </div>
+      <div class="svc-item blue">
+        <span class="svc-item-emoji">🪵</span>
+        <div>
+          <h3>Meubles de salle de bain</h3>
+          <p>Avec l&#39;aide de mon fournisseur, nous faisons tout pour que vos choix de meubles soient les plus éclairés et éclairants. Tout est possible : gammes larges, styles variés, sur mesure ou catalogue, pour chaque budget.</p>
+        </div>
+      </div>
+      
+      <div class="svc-item blue">
+        <span class="svc-item-emoji">♿</span>
+        <div>
+          <h3>Création salle de bain PMR</h3>
+          <p>Solutions adaptées aux personnes à mobilité réduite : design ergonomique et installations accessibles.</p>
+        </div>
+      </div>
+      
+      <div class="svc-item blue">
+        <span class="svc-item-emoji">💨</span>
+        <div>
+          <h3>Installation ventilation salle de bain</h3>
+          <p>Systèmes de ventilation efficaces pour éliminer l&#39;humidité et prévenir les moisissures. Environnement sain et confortable.</p>
+        </div>
+      </div>
+      
       </div>
     </div>
   </div>
 
-  <!-- DÉPANNAGE -->
-  <div class="services-cat">
-    <div class="cat-header">
-      <div class="cat-icon" style="background:#DCFCE7;">⚡</div>
-      <div>
-        <p class="cat-title" style="color:#166534;">Dépannage & Rénovation</p>
-        <p class="cat-sub">Intervention rapide pour tous vos problèmes urgents — disponible en dehors des heures ouvrables (tarif majoré)</p>
+  <div class="svc-cat" id="svc-depannage" data-open="false">
+    <div class="svc-header" style="background:linear-gradient(135deg,#166534,#22C55E);">
+      <div class="svc-icon" style="background:rgba(0,0,0,0.12);">⚡</div>
+      <div class="svc-header-text">
+        <p class="svc-title" style="color:#fff;">Dépannage & Urgences</p>
+        <p class="svc-sub" style="color:rgba(255,255,255,0.85);">Intervention rapide pour tous vos problèmes urgents — disponible en dehors des heures ouvrables (tarif majoré)</p>
       </div>
+      <div class="svc-chevron" style="background:rgba(255,255,255,0.25);color:#fff;">▼</div>
     </div>
-    <div class="services-grid">
-      <div class="service-item green">
-        <span class="service-emoji">🔧</span>
+    <div class="svc-body">
+      <div class="svc-grid">
+      <div class="svc-item green">
+        <span class="svc-item-emoji">🔧</span>
         <div>
           <h3>Dépannage plomberie</h3>
           <p>Intervention rapide sur toute panne ou problème de plomberie : robinet, tuyauterie, pression, chauffe-eau.</p>
+        
+      <div class="svc-item green">
+        <span class="svc-item-emoji">⚙️</span>
+        <div>
+          <h3>Remplacement de régulation de chaudière</h3>
+          <p>Remplacement de la carte de régulation, du thermostat d&#39;ambiance ou du système de contrôle de votre chaudière. Mise en place de thermostats sans fil ou connectés. Intervention soignée pour retrouver un pilotage précis et économique de votre installation.</p>
         </div>
       </div>
-      <div class="service-item green">
-        <span class="service-emoji">💧</span>
+</div>
+      </div>
+      <div class="svc-item green">
+        <span class="svc-item-emoji">💧</span>
         <div>
           <h3>Détection & réparation de fuites</h3>
           <p>Localisation et réparation de fuites visibles ou cachées. Intervention soignée pour limiter les dégâts.</p>
         </div>
       </div>
-      <div class="service-item green">
-        <span class="service-emoji">🏗️</span>
-        <div>
-          <h3>Rénovation</h3>
-          <p>Rénovation complète ou partielle de votre installation de chauffage ou sanitaire. Mise aux normes, modernisation.</p>
-        </div>
+      
       </div>
-    </div>
-    <div style="background:#FEF3C7;border-radius:14px;padding:18px 22px;margin-top:24px;display:flex;align-items:center;gap:14px;">
-      <span style="font-size:1.5rem;">⚠️</span>
-      <p style="font-size:0.88rem;color:#92400E;line-height:1.6;"><strong>Urgences hors horaires :</strong> Lun–Ven 7h30–18h aux tarifs normaux. En dehors de ces horaires, une majoration de <strong>+100%</strong> s'applique. Pour toute urgence, appelez directement le <a href="tel:0477190570" style="color:#92400E;font-weight:700;">0477/190.570</a>.</p>
     </div>
   </div>
 
@@ -499,6 +605,21 @@ window.addEventListener('scroll',function(){
   var nav=document.querySelector('nav');
   nav.style.boxShadow=window.scrollY>20?'0 4px 20px rgba(0,0,0,0.15)':'0 2px 12px rgba(0,0,0,0.10)';
 });
+</script>
+<script>
+/* ── Services Accordion ── */
+(function() {
+  document.querySelectorAll('.svc-header').forEach(function(hdr) {
+    hdr.addEventListener('click', function() {
+      var cat = this.closest('.svc-cat');
+      var isOpen = cat.getAttribute('data-open') === 'true';
+      document.querySelectorAll('.svc-cat[data-open="true"]').forEach(function(c) {
+        if (c !== cat) c.setAttribute('data-open', 'false');
+      });
+      cat.setAttribute('data-open', isOpen ? 'false' : 'true');
+    });
+  });
+})();
 </script>
 </body>
 </html>
