@@ -252,6 +252,48 @@ footer { background:#1A1A2E; color:rgba(255,255,255,0.75); padding:48px 5% 28px;
 }
 /* ══════════════════════════════════════════════════════════════ */
 
+
+/* ══ CENTRAGE GLOBAL GRILLES & BADGES ══════════════════════════ */
+/* Toutes les grilles auto-fill → items centrés */
+[style*="grid-template-columns:repeat(auto-fill"],
+[style*="grid-template-columns:repeat(auto-fit"] {
+  justify-items: center;
+}
+
+/* Toutes les grilles de marques, services, conseils */
+.services-grid,
+.c-grid,
+.footer-grid {
+  justify-items: center;
+}
+
+/* Badges section-tag */
+.section-tag {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grilles inline (style direct) — appliquer justify-content:center */
+section > div[style*="display:grid"],
+section > div > div[style*="display:grid"] {
+  justify-content: center;
+}
+
+/* Cards marques — centrage interne déjà OK (text-align:center) */
+/* Services items */
+.service-item {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Fournisseurs grid */
+.services-cat .services-grid {
+  justify-content: center;
+}
+/* ═══════════════════════════════════════════════════════════════ */
+
 </style>
 </head>
 <body>
@@ -296,7 +338,7 @@ footer { background:#1A1A2E; color:rgba(255,255,255,0.75); padding:48px 5% 28px;
   <span class="section-tag">Blog</span>
   <h2 class="section-title">Conseils & <span>informations</span></h2>
   <p class="section-sub" style="margin-bottom:48px;">Retrouvez nos articles pratiques sur le chauffage, les réglementations en vigueur et les aides disponibles en Wallonie.</p>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px;justify-content:center;">
 
     <div class="c-grid">
     <div class="c-card" data-idx="0" role="button" tabindex="0" aria-expanded="false">

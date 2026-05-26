@@ -95,6 +95,48 @@ footer { background:#1A1A2E; color:rgba(255,255,255,0.75); padding:48px 5% 28px;
   .mobile-menu { display:none !important; }
 }
 
+
+/* ══ CENTRAGE GLOBAL GRILLES & BADGES ══════════════════════════ */
+/* Toutes les grilles auto-fill → items centrés */
+[style*="grid-template-columns:repeat(auto-fill"],
+[style*="grid-template-columns:repeat(auto-fit"] {
+  justify-items: center;
+}
+
+/* Toutes les grilles de marques, services, conseils */
+.services-grid,
+.c-grid,
+.footer-grid {
+  justify-items: center;
+}
+
+/* Badges section-tag */
+.section-tag {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grilles inline (style direct) — appliquer justify-content:center */
+section > div[style*="display:grid"],
+section > div > div[style*="display:grid"] {
+  justify-content: center;
+}
+
+/* Cards marques — centrage interne déjà OK (text-align:center) */
+/* Services items */
+.service-item {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Fournisseurs grid */
+.services-cat .services-grid {
+  justify-content: center;
+}
+/* ═══════════════════════════════════════════════════════════════ */
+
 </style>
 </head>
 <body>
@@ -139,7 +181,7 @@ footer { background:#1A1A2E; color:rgba(255,255,255,0.75); padding:48px 5% 28px;
   <span class="section-tag">Témoignages</span>
   <h2 class="section-title">Ce que disent nos <span>clients</span></h2>
   <p class="section-sub" style="margin-bottom:48px;">Tous nos avis sont vérifiés sur Google. La satisfaction de nos clients est notre meilleure carte de visite.</p>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-bottom:48px;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-bottom:48px;justify-content:center;">
     <div style="background:#fff;border-radius:18px;padding:28px;box-shadow:var(--shadow);">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
         <div style="color:var(--orange);font-size:1.2rem;">★★★★★</div>

@@ -461,6 +461,48 @@ footer {
   .mobile-menu { display:none !important; }
 }
 
+
+/* ══ CENTRAGE GLOBAL GRILLES & BADGES ══════════════════════════ */
+/* Toutes les grilles auto-fill → items centrés */
+[style*="grid-template-columns:repeat(auto-fill"],
+[style*="grid-template-columns:repeat(auto-fit"] {
+  justify-items: center;
+}
+
+/* Toutes les grilles de marques, services, conseils */
+.services-grid,
+.c-grid,
+.footer-grid {
+  justify-items: center;
+}
+
+/* Badges section-tag */
+.section-tag {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grilles inline (style direct) — appliquer justify-content:center */
+section > div[style*="display:grid"],
+section > div > div[style*="display:grid"] {
+  justify-content: center;
+}
+
+/* Cards marques — centrage interne déjà OK (text-align:center) */
+/* Services items */
+.service-item {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Fournisseurs grid */
+.services-cat .services-grid {
+  justify-content: center;
+}
+/* ═══════════════════════════════════════════════════════════════ */
+
 </style>
 </head>
 <body>
@@ -803,7 +845,7 @@ footer {
     <h2 class="section-title">Nos <span>conseils pratiques</span></h2>
     <p class="section-sub">Réglementation, primes énergie, fin du mazout, TVA… Restez informé sur tout ce qui concerne votre installation en Wallonie.</p>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:40px;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:40px;justify-content:center;">
     <div onclick="window.location='conseils.html#article-0'" style="background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:all 0.3s;cursor:pointer;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='var(--shadow-lg)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='var(--shadow)'">
       <div style="background:linear-gradient(135deg,#1D6FA4,#2187C3);padding:22px 20px 16px;display:flex;align-items:center;gap:12px;">
         <span style="font-size:1.8rem;">📋</span>

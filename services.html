@@ -98,6 +98,48 @@ footer { background:#1A1A2E; color:rgba(255,255,255,0.75); padding:48px 5% 28px;
   .mobile-menu { display:none !important; }
 }
 
+
+/* ══ CENTRAGE GLOBAL GRILLES & BADGES ══════════════════════════ */
+/* Toutes les grilles auto-fill → items centrés */
+[style*="grid-template-columns:repeat(auto-fill"],
+[style*="grid-template-columns:repeat(auto-fit"] {
+  justify-items: center;
+}
+
+/* Toutes les grilles de marques, services, conseils */
+.services-grid,
+.c-grid,
+.footer-grid {
+  justify-items: center;
+}
+
+/* Badges section-tag */
+.section-tag {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grilles inline (style direct) — appliquer justify-content:center */
+section > div[style*="display:grid"],
+section > div > div[style*="display:grid"] {
+  justify-content: center;
+}
+
+/* Cards marques — centrage interne déjà OK (text-align:center) */
+/* Services items */
+.service-item {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Fournisseurs grid */
+.services-cat .services-grid {
+  justify-content: center;
+}
+/* ═══════════════════════════════════════════════════════════════ */
+
 </style>
 </head>
 <body>
@@ -153,45 +195,52 @@ footer { background:#1A1A2E; color:rgba(255,255,255,0.75); padding:48px 5% 28px;
     </div>
     <div class="services-grid">
       <div class="service-item">
-        <span class="service-emoji">🏭</span>
+        <span class="service-emoji">🔥</span>
         <div>
           <h3>Installation de chaudières</h3>
-          <p>Chaudières à condensation gaz ou mazout, toutes marques. Remplacement d'ancienne installation, mise aux normes.</p>
+          <p>Chaudières à condensation gaz ou mazout, toutes marques. Remplacement d'ancienne installation, mise aux normes, installation neuve. Technicien multi-marques agréé <strong>Cédicol, G1</strong> et habilité au <strong>diagnostic approfondi de type 1</strong>.</p>
         </div>
       </div>
       <div class="service-item">
-        <span class="service-emoji">🌡️</span>
+        <span class="service-emoji">🔥❄️</span>
         <div>
-          <h3>Pompe à chaleur</h3>
-          <p>Installation de pompes à chaleur air/eau ou géothermiques. Solution écologique et économique, primes disponibles.</p>
+          <h3>Pompe à chaleur &amp; climatisation</h3>
+          <p>Installation de pompes à chaleur <strong>air/eau</strong> (pour le chauffage central), <strong>air/air</strong> (split mural ou gainable) et <strong>géothermiques</strong>. Certains modèles sont réversibles : ils chauffent en hiver et rafraîchissent en été. Consommation 3 à 4× inférieure à une chaudière classique.</p>
         </div>
       </div>
       <div class="service-item">
         <span class="service-emoji">💧</span>
         <div>
-          <h3>Boiler eau chaude sanitaire</h3>
-          <p>Installation et remplacement de boilers électriques ou à gaz pour la production d'eau chaude sanitaire.</p>
-        </div>
-      </div>
-      <div class="service-item">
-        <span class="service-emoji">☁️</span>
-        <div>
-          <h3>Ballon thermodynamique</h3>
-          <p>Installation de ballons thermodynamiques pour une production d'ECS économique et écologique.</p>
+          <h3>Production d'eau chaude sanitaire</h3>
+          <p><strong>Boiler électrique</strong> — solution simple et économique à l'achat. <strong>Boiler à gaz</strong> — eau chaude instantanée ou à accumulation. <strong>Boiler thermodynamique</strong> — pompe à chaleur dédiée à l'ECS, 60 à 70 % d'économie d'énergie vs électrique. </p>
         </div>
       </div>
       <div class="service-item">
         <span class="service-emoji">💨</span>
         <div>
           <h3>Système de ventilation</h3>
-          <p>Installation de VMC simple ou double flux (Zehnder, Duco, Renson). Qualité d'air optimale dans votre habitation.</p>
+          <p>Installation de VMC simple ou double flux (Zehnder, Duco, Renson). Qualité d'air optimale dans votre habitation, conforme aux normes belges.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <span class="service-emoji">🔧</span>
+        <div>
+          <h3>Tuyauterie gaz</h3>
+          <p>Installation, modification et contrôle des conduites de gaz intérieures. LKS Chauffage assure le <strong>dimensionnement correct</strong> des tuyauteries (diamètre, pression, longueur de parcours) pour garantir un débit suffisant à tous vos appareils et la sécurité de l'installation.</p>
         </div>
       </div>
       <div class="service-item">
         <span class="service-emoji">🌡️</span>
         <div>
           <h3>Radiateurs</h3>
-          <p>Pose et remplacement de radiateurs panneaux, basse hauteur ou design. Connexions soignées, finitions impeccables.</p>
+          <p>Pose et remplacement de radiateurs panneaux, basse hauteur ou design. Connexions soignées, finitions impeccables. Toutes marques : Radson, Uni8, IMI Heimeier.</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <span class="service-emoji">🏠</span>
+        <div>
+          <h3>Ramonage</h3>
+          <p>Le ramonage est une <strong>obligation légale en Belgique</strong> : au moins une fois par an pour les installations au bois ou au mazout. Il garantit le bon tirage, prévient les risques d'intoxication au monoxyde de carbone et les incendies de conduit. LKS Chauffage intervient pour le ramonage et le contrôle de vos conduits de cheminée et d'évacuation.</p>
         </div>
       </div>
     </div>

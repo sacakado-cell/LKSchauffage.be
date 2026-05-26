@@ -95,6 +95,48 @@ footer { background:#1A1A2E; color:rgba(255,255,255,0.75); padding:48px 5% 28px;
   .mobile-menu { display:none !important; }
 }
 
+
+/* ══ CENTRAGE GLOBAL GRILLES & BADGES ══════════════════════════ */
+/* Toutes les grilles auto-fill → items centrés */
+[style*="grid-template-columns:repeat(auto-fill"],
+[style*="grid-template-columns:repeat(auto-fit"] {
+  justify-items: center;
+}
+
+/* Toutes les grilles de marques, services, conseils */
+.services-grid,
+.c-grid,
+.footer-grid {
+  justify-items: center;
+}
+
+/* Badges section-tag */
+.section-tag {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grilles inline (style direct) — appliquer justify-content:center */
+section > div[style*="display:grid"],
+section > div > div[style*="display:grid"] {
+  justify-content: center;
+}
+
+/* Cards marques — centrage interne déjà OK (text-align:center) */
+/* Services items */
+.service-item {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Fournisseurs grid */
+.services-cat .services-grid {
+  justify-content: center;
+}
+/* ═══════════════════════════════════════════════════════════════ */
+
 </style>
 </head>
 <body>
@@ -149,7 +191,7 @@ footer { background:#1A1A2E; color:rgba(255,255,255,0.75); padding:48px 5% 28px;
         <p style="color:var(--gray);font-size:0.88rem;">Installations dont j'assure le suivi et l'entretien régulier</p>
       </div>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;justify-content:center;">
       <div class="lb-card" data-lb="0" data-src="real-photo-1.jpg" data-title="Chaufferie industrielle" data-sub="2× Viessmann Paromat-Simplex · Entretien annuel" style="border-radius:16px;overflow:hidden;box-shadow:var(--shadow);cursor:pointer;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
         <img src="real-photo-1.jpg" alt="Chaufferie Viessmann Paromat-Simplex" style="width:100%;height:240px;object-fit:cover;object-position:center;display:block;">
         <div style="padding:14px 16px;background:#fff;">
@@ -197,7 +239,7 @@ footer { background:#1A1A2E; color:rgba(255,255,255,0.75); padding:48px 5% 28px;
         <p style="color:var(--gray);font-size:0.88rem;">Installations neuves et remplacements réalisés par LKS Chauffage</p>
       </div>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;justify-content:center;">
      
        
       <!-- Emplacements pour futures photos -->
@@ -240,7 +282,7 @@ footer { background:#1A1A2E; color:rgba(255,255,255,0.75); padding:48px 5% 28px;
         <p style="color:var(--gray);font-size:0.88rem;">Interventions urgentes et remplacements techniques réalisés sur le terrain</p>
       </div>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;justify-content:center;">
       <div class="lb-card" data-lb="9" data-src="real-photo-12.jpg" data-title="Remplacement brûleur Elco 70kW" data-sub="Intervention d&#39;urgence · Remplacement brûleur Elco 70kW · Institution" style="border-radius:16px;overflow:hidden;box-shadow:var(--shadow);cursor:pointer;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
         <img src="real-photo-12.jpg" alt="Remplacement brûleur Elco 70kW urgence" style="width:100%;height:240px;object-fit:cover;object-position:top;display:block;">
         <div style="padding:14px 16px;background:#fff;">
@@ -283,7 +325,7 @@ footer { background:#1A1A2E; color:rgba(255,255,255,0.75); padding:48px 5% 28px;
         <p style="color:var(--gray);font-size:0.88rem;">Salles de bain, douches et installations sanitaires réalisées par LKS Chauffage</p>
       </div>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;justify-content:center;">
       <div class="lb-card" data-lb="10" data-src="real-photo-extra-0.jpg" data-title="Douche moderne" data-sub="Salle de bain complète · Robinetterie & finitions soignées" style="border-radius:16px;overflow:hidden;box-shadow:var(--shadow);cursor:pointer;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
         <img src="real-photo-extra-0.jpg" alt="Douche à l'italienne - salle de bain complète" style="width:100%;height:240px;object-fit:cover;object-position:top center;display:block;">
         <div style="padding:14px 16px;background:#fff;">
@@ -310,7 +352,7 @@ footer { background:#1A1A2E; color:rgba(255,255,255,0.75); padding:48px 5% 28px;
         <p style="color:var(--gray);font-size:0.88rem;">Installation de tubage inox et systèmes d'évacuation</p>
       </div>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;justify-content:center;">
       <div class="lb-card" data-lb="12" data-src="real-photo-9.jpg" data-title="Conduit de fumée inox" data-sub="Tubage extérieur · Chapeau anti-pluie inox" style="border-radius:16px;overflow:hidden;box-shadow:var(--shadow);cursor:pointer;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
         <img src="real-photo-9.jpg" alt="Conduit de fumée inox" style="width:100%;height:240px;object-fit:cover;object-position:center;display:block;">
         <div style="padding:14px 16px;background:#fff;">
