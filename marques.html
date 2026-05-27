@@ -83,15 +83,8 @@ footer { background:#1A1A2E; color:rgba(255,255,255,0.75); padding:48px 5% 28px;
  }
 @media(max-width:680px) {   .footer-grid { grid-template-columns:1fr; } }
 
-@media(max-width:768px){
-  
-  
-  
-}
-@media(min-width:769px){
-  
-  
-}
+
+
 
 /* ══ CENTRAGE VERSION A — Éléments centrés, paragraphes à gauche ════ */
 section {
@@ -133,7 +126,7 @@ p, li, ul, ol { text-align: left; }
 
 
 @media(max-width:900px) { .nav-links { gap:12px; } .nav-links a { font-size:0.85rem; } }
-@media(max-width:768px) { .nav-links { display:none !important; } .hamburger { display:flex !important; } .nav-phone { display:none; } }
+@media(max-width:768px) { .nav-links { display:none !important; } .hamburger { display:flex !important; flex-direction:column; } .nav-phone { display:none; } }
 @media(min-width:769px) { .hamburger { display:none !important; } .mobile-menu { display:none !important; } }
 
 
@@ -255,8 +248,10 @@ p, li, ul, ol { text-align: left; }
 }
 @media(max-width:600px) {
   .piliers-grid { grid-template-columns:1fr; }
-  .trust-intro { padding:28px 24px; }
-  .carousel-item { padding:20px 20px; min-width:130px; }
+  .trust-intro { padding:28px 20px; }
+  .carousel-item { padding:16px 14px; min-width:110px; }
+  .carousel-logo { width:100px; }
+  .carousel-label { max-width:110px; font-size:0.63rem; }
 }
 
 </style>
@@ -313,7 +308,7 @@ p, li, ul, ol { text-align: left; }
     <div class="pilier-card">
       <span class="pi-num">4</span>
       <h3>Agréments officiels</h3>
-      <p>Cédicol L, G1, Cerga et Diagnostic approfondi type 1 — les certifications qui autorisent légalement Anaël à intervenir sur le gaz et le mazout en Wallonie.</p>
+      <p>Cédicol L, G1, Cerga et Diagnostic approfondi type 1 — les certifications qui autorisent légalement Anaël à intervenir sur le mazout et le gaz en Wallonie.</p>
     </div>
     <div class="pilier-card blue">
       <span class="pi-num" style="color:var(--blue);">38</span>
@@ -338,11 +333,11 @@ p, li, ul, ol { text-align: left; }
     <div class="agrements-grid">
     <div class="agrement-card">
       <span class="agrement-icon">🏅</span>
-      <div><h4>Cédicol L</h4><p>Agrément gaz naturel — installations, entretien et mise en service</p></div>
+      <div><h4>Cédicol L</h4><p>Agrément mazout — installations, entretien et mise en service</p></div>
     </div>
     <div class="agrement-card blue">
       <span class="agrement-icon">🏅</span>
-      <div><h4>G1</h4><p>Certification mazout — entretien, nettoyage et contrôle de combustion</p></div>
+      <div><h4>G1</h4><p>Certification gaz naturel — entretien, nettoyage et contrôle de combustion</p></div>
     </div>
     <div class="agrement-card green">
       <span class="agrement-icon">🏅</span>
@@ -352,7 +347,6 @@ p, li, ul, ol { text-align: left; }
       <span class="agrement-icon">🏅</span>
       <div><h4>Diagnostic approfondi type 1</h4><p>Habilitation au diagnostic complet des installations de chauffage</p></div>
     </div>
-    <div class="agrement-card" style="visibility:hidden;"></div>
     <div class="agrement-card gray">
       <span class="agrement-icon">🔧</span>
       <div><h4>Multi-marques</h4><p>Intervention sur toutes les marques — indépendant de tout fournisseur</p></div>
@@ -361,7 +355,6 @@ p, li, ul, ol { text-align: left; }
       <span class="agrement-icon">📍</span>
       <div><h4>Province de Namur</h4><p>Zone d'intervention principale — Ciney et alentours, réactivité garantie</p></div>
     </div>
-    <div class="agrement-card" style="visibility:hidden;"></div>
   </div>
 </section>
 

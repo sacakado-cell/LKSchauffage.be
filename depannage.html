@@ -85,10 +85,10 @@ footer { background:#1A1A2E; color:rgba(255,255,255,0.75); padding:48px 5% 28px;
 p, li, ul, ol { text-align:left; }
  }
 @media(max-width:768px) {    .footer-grid { grid-template-columns:1fr; } }
-@media(min-width:769px) {   }
+
 
 @media(max-width:900px) { .nav-links { gap:12px; } .nav-links a { font-size:0.85rem; } }
-@media(max-width:768px) { .nav-links { display:none !important; } .hamburger { display:flex !important; } .nav-phone { display:none; } }
+@media(max-width:768px) { .nav-links { display:none !important; } .hamburger { display:flex !important; flex-direction:column; } .nav-phone { display:none; } }
 @media(min-width:769px) { .hamburger { display:none !important; } .mobile-menu { display:none !important; } }
 </style>
 </head>
