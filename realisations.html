@@ -79,18 +79,11 @@ footer { background:#1A1A2E; color:rgba(255,255,255,0.75); padding:48px 5% 28px;
 .float-btn { background:var(--orange); color:#fff; padding:14px 20px; border-radius:50px; font-weight:700; text-decoration:none; font-family:'Poppins',sans-serif; box-shadow:0 6px 24px rgba(245,146,10,0.5); font-size:1rem; display:flex; align-items:center; gap:8px; transition:all 0.2s; }
 .float-btn:hover { transform:scale(1.05); }
 .float-wa { background:#25D366; box-shadow:0 6px 24px rgba(37,211,102,0.5); }
- }
+ 
 @media(max-width:680px) {   .footer-grid { grid-template-columns:1fr; } }
 
-@media(max-width:768px){
-  
-  
-  
-}
-@media(min-width:769px){
-  
-  
-}
+
+
 
 /* ══ CENTRAGE VERSION A — Éléments centrés, paragraphes à gauche ════ */
 section {
@@ -132,7 +125,7 @@ p, li, ul, ol { text-align: left; }
 
 
 @media(max-width:900px) { .nav-links { gap:12px; } .nav-links a { font-size:0.85rem; } }
-@media(max-width:768px) { .nav-links { display:none !important; } .nav-right { display:none !important; } .hamburger { display:flex !important; } .nav-phone { display:none; } }
+@media(max-width:768px) { .nav-links { display:none !important; } .hamburger { display:flex !important; flex-direction:column; } .nav-phone { display:none; } }
 @media(min-width:769px) { .hamburger { display:none !important; } .mobile-menu { display:none !important; } }
 </style>
 </head>
@@ -150,7 +143,7 @@ p, li, ul, ol { text-align: left; }
     <li><a href="avis.html">Avis clients</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <div class="nav-right" style="display:flex;align-items:center;gap:12px;">
+  <div style="display:flex;align-items:center;gap:12px;">
     <a href="https://www.facebook.com/LKSChauffage" target="_blank" aria-label="Facebook LKS Chauffage" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;text-decoration:none;"><img src="data:image/png;base64,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" alt="Facebook" style="width:38px;height:38px;border-radius:50%;"></a>
     <a class="nav-phone" href="tel:0477190570">☎ 0477/190.570</a>
   </div>

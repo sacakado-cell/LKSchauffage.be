@@ -79,7 +79,7 @@ footer { background:#1A1A2E; color:rgba(255,255,255,0.75); padding:48px 5% 28px;
 .float-btn { background:var(--orange); color:#fff; padding:14px 20px; border-radius:50px; font-weight:700; text-decoration:none; font-family:'Poppins',sans-serif; box-shadow:0 6px 24px rgba(245,146,10,0.5); font-size:1rem; display:flex; align-items:center; gap:8px; transition:all 0.2s; }
 .float-btn:hover { transform:scale(1.05); }
 .float-wa { background:#25D366; box-shadow:0 6px 24px rgba(37,211,102,0.5); }
- }
+ 
 @media(max-width:680px) {   .footer-grid { grid-template-columns:1fr; } }
 
 @media(max-width:768px){
@@ -134,6 +134,7 @@ p, li, ul, ol { text-align: left; }
 @media(max-width:900px) { .nav-links { gap:12px; } .nav-links a { font-size:0.85rem; } }
 @media(max-width:768px) { .nav-links { display:none !important; } .hamburger { display:flex !important; } .nav-phone { display:none; } }
 @media(min-width:769px) { .hamburger { display:none !important; } .mobile-menu { display:none !important; } }
+@media(max-width:680px){ [style*="grid-template-columns"]{ grid-template-columns:1fr !important; } }
 </style>
 </head>
 <body>
